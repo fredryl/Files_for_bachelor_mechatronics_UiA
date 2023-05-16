@@ -1,0 +1,963 @@
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and export to LaTeX again.
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{epstopdf}
+\usepackage[table]{xcolor}
+\usepackage{matlab}
+
+\sloppy
+\epstopdfsetup{outdir=./}
+\graphicspath{ {./finner_aks_lengde_beam_torque_images/} }
+
+\begin{document}
+
+\begin{par}
+\begin{flushleft}
+Here we want to find the acceptable torque for the servo and velocity for the beam.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Data coms from the pdf: "MS2N Synchronous Servomotors"
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+First the servo specs: 
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Type: \textit{\textbf{MS2N03-B0BYN-HMSH1-NNNNN-NN}}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+\textit{\textbf{3\textasciitilde{}PM-MOTOR}}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+\textit{\textbf{n(N) 6470 1/min}}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+\textit{\textbf{n(max) 9000 1/min}}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+\textit{\textbf{U(max) AC 600 V}}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+\includegraphics[width=\maxwidth{53.18615153035625em}]{image_0}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Beam with no ball center of mass Balanced:
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+\includegraphics[width=\maxwidth{59.00652282990467em}]{image_1}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+\underline{\textit{\textbf{Only the beam:}}}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Mass properties of Sammenstilling V3.2-LAPTOP-44QB4H0M
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+     Configuration: Default
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+     Coordinate system: Coordinate System1
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Mass = 0.40237903 kilograms
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Volume = 0.00030401 cubic meters
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Surface area = 0.19049638 square meters
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Center of mass: ( meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	X = 0.00733656
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Y = -0.00497760
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Z = 0.04227204
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Principal axes of inertia and principal moments of inertia: ( kilograms * square meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Taken at the center of mass.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	 Ix = ( 0.99996290, -0.00808711,  0.00296667)   	Px = 0.00026788
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	 Iy = ( 0.00830504,  0.81368510, -0.58124658)   	Py = 0.03606421
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	 Iz = ( 0.00228667,  0.58124965,  0.81372207)   	Pz = 0.03615710
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Moments of inertia: ( kilograms * square meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Taken at the center of mass and aligned with the output coordinate system.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Lxx = 0.00027053	Lxy = -0.00028960	Lxz = 0.00010602
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Lyx = -0.00028960	Lyy = 0.03609325	Lyz = -0.00004480
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Lzx = 0.00010602	Lzy = -0.00004480	Lzz = 0.03612540
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Moments of inertia: ( kilograms * square meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Taken at the output coordinate system.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Ixx = 0.00099952	Ixy = -0.00030430	Ixz = 0.00023081
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Iyx = -0.00030430	Iyy = 0.03683393	Iyz = -0.00012946
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Izx = 0.00023081	Izy = -0.00012946	Izz = 0.03615703
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+--------------------------------------------------------------------------------------------------------------
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+\underline{\textit{\textbf{With the ball on the tip:}}}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Mass properties of Sammenstilling V3.2-LAPTOP-44QB4H0M
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+     Configuration: Default
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+     Coordinate system: Coordinate System1
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Mass = 0.40520721 kilograms
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Volume = 0.00030665 cubic meters
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Surface area = 0.20033258 square meters
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Center of mass: ( meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	X = 0.00962272
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Y = -0.00488233
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Z = 0.04232563
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Principal axes of inertia and principal moments of inertia: ( kilograms * square meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Taken at the center of mass.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	 Ix = ( 0.99996565, -0.00767245,  0.00313674)   	Px = 0.00026948
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	 Iy = ( 0.00807443,  0.81612611, -0.57781742)   	Py = 0.03636670
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	 Iz = ( 0.00187330,  0.57782290,  0.81616003)   	Pz = 0.03645922
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Moments of inertia: ( kilograms * square meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Taken at the center of mass and aligned with the output coordinate system.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Lxx = 0.00027196	Lxy = -0.00027704	Lxz = 0.00011308
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Lyx = -0.00027704	Lyy = 0.03639547	Lyz = -0.00004450
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Lzx = 0.00011308	Lzy = -0.00004450	Lzz = 0.03642798
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Moments of inertia: ( kilograms * square meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Taken at the output coordinate system.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Ixx = 0.00100753	Ixy = -0.00029608	Ixz = 0.00027812
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Iyx = -0.00029608	Iyy = 0.03715890	Iyz = -0.00012824
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Izx = 0.00027812	Izy = -0.00012824	Izz = 0.03647516
+\end{flushleft}
+\end{par}
+
+
+\begin{par}
+\begin{flushleft}
+\underline{\textit{\textbf{Specifications for real beam used in the physical system:}}}
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Mass properties of Sammenstilling V3.2-LAPTOP-44QB4H0M
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+     Configuration: Default
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+     Coordinate system: -- default --
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Mass = 0.30555769 kilograms
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Volume = 0.00028934 cubic meters
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Surface area = 0.17884038 square meters
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Center of mass: ( meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	X = 0.12748815
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Y = -0.00495633
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Z = 0.03996905
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Principal axes of inertia and principal moments of inertia: ( kilograms * square meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Taken at the center of mass.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	 Ix = ( 0.99951750, -0.01678212,  0.02613662)   	Px = 0.00023352
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	 Iy = ( 0.02707604,  0.88309313, -0.46841586)   	Py = 0.01772599
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	 Iz = (-0.01522006,  0.46889752,  0.88312143)   	Pz = 0.01781718
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Moments of inertia: ( kilograms * square meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Taken at the center of mass and aligned with the output coordinate system.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Lxx = 0.00025042	Lxy = -0.00029277	Lxz = 0.00045820
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Lyx = -0.00029277	Lyy = 0.01774112	Lyz = -0.00004543
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Lzx = 0.00045820	Lzy = -0.00004543	Lzz = 0.01778516
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Moments of inertia: ( kilograms * square meters )
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Taken at the output coordinate system.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Ixx = 0.00074606	Ixy = -0.00048584	Ixz = 0.00201519
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Iyx = -0.00048584	Iyy = 0.02319555	Iyz = -0.00010596
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+	Izx = 0.00201519	Izy = -0.00010596	Izz = 0.02275896
+\end{flushleft}
+\end{par}
+
+
+\matlabheading{This is the specs off beam:}
+
+\begin{matlabcode}
+clc; close all; clear;
+beam_length = 710 %mm
+\end{matlabcode}
+\begin{matlaboutput}
+beam_length = 710
+\end{matlaboutput}
+\begin{matlabcode}
+ball_max_wigth = 2.86 % g
+\end{matlabcode}
+\begin{matlaboutput}
+ball_max_wigth = 2.8600
+\end{matlaboutput}
+\begin{matlabcode}
+alpha_max =  27.5094; % rad/s^2, Max angular acceleration.
+velocity_max_tip = alpha_max*0.4216 % m/s^2 tangential acceleration max at tip.
+\end{matlabcode}
+\begin{matlaboutput}
+velocity_max_tip = 11.5980
+\end{matlaboutput}
+\begin{matlabcode}
+
+% Assume the beam with the ball.
+center_off_mass_from_rotation_dx = 2.33 % mm
+\end{matlabcode}
+\begin{matlaboutput}
+center_off_mass_from_rotation_dx = 2.3300
+\end{matlaboutput}
+\begin{matlabcode}
+center_off_mass_from_rotation_dy = 5.17 % mm
+\end{matlabcode}
+\begin{matlaboutput}
+center_off_mass_from_rotation_dy = 5.1700
+\end{matlaboutput}
+\begin{matlabcode}
+
+moment_of_initertia_beam = 0.03615703% kg*m^2, ball not considerd
+\end{matlabcode}
+\begin{matlaboutput}
+moment_of_initertia_beam = 0.0362
+\end{matlaboutput}
+\begin{matlabcode}
+Izz =  0.03647516 % kg*m^2 with the ball at the tip far est from sensor 335.01mm
+\end{matlabcode}
+\begin{matlaboutput}
+Izz = 0.0365
+\end{matlaboutput}
+
+
+\matlabheading{Data from servo}
+
+\begin{par}
+\begin{flushleft}
+MS2N03-B\_\_\_\_-\_\_\_\_1
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+M_4_Nm = 1.80 %Holding torque
+\end{matlabcode}
+\begin{matlaboutput}
+M_4_Nm = 1.8000
+\end{matlaboutput}
+\begin{matlabcode}
+M_1_Nm = 1.3 % Dynamic braking torque
+\end{matlabcode}
+\begin{matlaboutput}
+M_1_Nm = 1.3000
+\end{matlaboutput}
+\begin{matlabcode}
+t_1_ms = 8 % Maximum connection time
+\end{matlabcode}
+\begin{matlaboutput}
+t_1_ms = 8
+\end{matlaboutput}
+\begin{matlabcode}
+t_2_ms = 35 % Maximum disconnection time
+\end{matlabcode}
+\begin{matlaboutput}
+t_2_ms = 35
+\end{matlaboutput}
+
+
+\matlabheading{Static torque if ball is at the tip of left side seen from front.}
+
+\begin{matlabcode}
+% beam in equlibrium
+beam_ball_at_tip = 0.33501% m, This is from senter of beam to the senter off ball at the tip longest way from sensor. 
+\end{matlabcode}
+\begin{matlaboutput}
+beam_ball_at_tip = 0.3350
+\end{matlaboutput}
+\begin{matlabcode}
+g = 9.81 % m/s^2
+\end{matlabcode}
+\begin{matlaboutput}
+g = 9.8100
+\end{matlaboutput}
+\begin{matlabcode}
+Static_torque_down_from_ball = ball_max_wigth*10^(-3)*g  % kg*m/s^2 = N, force generated from gravety at tip horizontally
+\end{matlabcode}
+\begin{matlaboutput}
+Static_torque_down_from_ball = 0.0281
+\end{matlaboutput}
+\begin{matlabcode}
+Static_torque_on_axle = Static_torque_down_from_ball*beam_ball_at_tip  %  Nm, torque generated from weigth about rotation
+\end{matlabcode}
+\begin{matlaboutput}
+Static_torque_on_axle = 0.0094
+\end{matlaboutput}
+
+
+\matlabheading{Stop time when moving}
+
+\begin{matlabcode}
+J_fremd = Izz % kg*m^2  External inertia [kgm2]
+\end{matlabcode}
+\begin{matlaboutput}
+J_fremd = 0.0365
+\end{matlaboutput}
+\begin{matlabcode}
+J_rot = 0.000030 % Moment of inertia of motor [kgm2]
+\end{matlabcode}
+\begin{matlaboutput}
+J_rot = 3.0000e-05
+\end{matlaboutput}
+\begin{matlabcode}
+J_ges = J_rot+J_fremd % Moment of inertia of complete system [kgm2]
+\end{matlabcode}
+\begin{matlaboutput}
+J_ges = 0.0365
+\end{matlaboutput}
+\begin{matlabcode}
+n =  6470 % Nominal speed [1/min] (rated speed 100K)
+\end{matlabcode}
+\begin{matlaboutput}
+n = 6470
+\end{matlaboutput}
+\begin{matlabcode}
+M_1 = M_1_Nm
+\end{matlabcode}
+\begin{matlaboutput}
+M_1 = 1.3000
+\end{matlaboutput}
+\begin{matlabcode}
+M_6 = Static_torque_on_axle % M 6 Load torque [Nm]
+\end{matlabcode}
+\begin{matlaboutput}
+M_6 = 0.0094
+\end{matlaboutput}
+\begin{matlabcode}
+t_Br = (J_ges*n)/(9.55*(M_1+M_6))
+\end{matlabcode}
+\begin{matlaboutput}
+t_Br = 18.8879
+\end{matlaboutput}
+\begin{matlabcode}
+
+\end{matlabcode}
+
+
+\matlabheading{Inertia mismatch}
+
+\begin{par}
+\begin{flushleft}
+J\_ges\_real = J\_rot+J\_fremd\_real \% Moment of inertia of complete system [kgm2]
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+IZZ_real = 0.02275896 % kg*m^2  External inertia [kgm2]
+\end{matlabcode}
+\begin{matlaboutput}
+IZZ_real = 0.0228
+\end{matlaboutput}
+\begin{matlabcode}
+Inertia_Mismatch_Real = (IZZ_real)/J_rot % 706.7 inertia inertia mismatch is very high this becomes problematic.
+\end{matlabcode}
+\begin{matlaboutput}
+Inertia_Mismatch_Real = 758.6320
+\end{matlaboutput}
+\begin{matlabcode}
+%%%%%%%%%%%%%%% Simulated system under  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+J_L = IZZ_real % kg*m^2  External inertia [kgm2]
+\end{matlabcode}
+\begin{matlaboutput}
+J_L = 0.0228
+\end{matlaboutput}
+\begin{matlabcode}
+n = 10 % Gearbox for 1/10
+\end{matlabcode}
+\begin{matlaboutput}
+n = 10
+\end{matlaboutput}
+\begin{matlabcode}
+J_LM = J_L/(n^2) % The equivalent mass moment of inertia on the motor shaft will then be
+\end{matlabcode}
+\begin{matlaboutput}
+J_LM = 2.2759e-04
+\end{matlaboutput}
+\begin{matlabcode}
+Inertia_Mismatch_gear_box = J_LM/J_rot % <10, but is still over 10. 
+\end{matlabcode}
+\begin{matlaboutput}
+Inertia_Mismatch_gear_box = 7.5863
+\end{matlaboutput}
+\begin{matlabcode}
+n_optimal = sqrt(J_L/J_rot) % Optimal gear ratio.
+\end{matlabcode}
+\begin{matlaboutput}
+n_optimal = 27.5433
+\end{matlaboutput}
+
+
+\vspace{1em}
+
+\matlabheading{Motor torque during operation at standstill}
+
+\begin{matlabcode}
+F_0 = 0.95 % Self cooling 60K,  tabel23 page 57 Pdf
+\end{matlabcode}
+\begin{matlaboutput}
+F_0 = 0.9500
+\end{matlaboutput}
+\begin{matlabcode}
+M_0_60K = 0.73 % Nm, Tabel page 64
+\end{matlabcode}
+\begin{matlaboutput}
+M_0_60K = 0.7300
+\end{matlaboutput}
+\begin{matlabcode}
+M_0_star = F_0*M_0_60K % Nm, the continuous torque that can be output at standstill M0* page 57
+\end{matlabcode}
+\begin{matlaboutput}
+M_0_star = 0.6935
+\end{matlaboutput}
+
+\matlabheading{Expect continous operation}
+
+\begin{par}
+\begin{flushleft}
+"Bosch Rexroth recommends to select the S1-60K characteristic curve. The characteristiccurves are specified for S1-100K and S1-60K. The motor utilization is predominantly influenced by the installation situation." page 56.
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+rated_torque_100K = 0.54 % Nm, Table page 64
+\end{matlabcode}
+\begin{matlaboutput}
+rated_torque_100K = 0.5400
+\end{matlaboutput}
+\begin{matlabcode}
+max_toque_cold = 3.75 % Nm, Table page 64
+\end{matlabcode}
+\begin{matlaboutput}
+max_toque_cold = 3.7500
+\end{matlaboutput}
+\begin{matlabcode}
+max_toque_warm = 3.46 % Nm, Table page 64
+\end{matlabcode}
+\begin{matlaboutput}
+max_toque_warm = 3.4600
+\end{matlaboutput}
+\begin{matlabcode}
+Holding_torque = 1.8 % Nm, Table page 64
+\end{matlabcode}
+\begin{matlaboutput}
+Holding_torque = 1.8000
+\end{matlaboutput}
+
+
+\matlabheading{Finding max angular acceleration}
+
+\begin{matlabcode}
+moment_inertia_ball_at_tip = J_ges % Kg*m^2
+\end{matlabcode}
+\begin{matlaboutput}
+moment_inertia_ball_at_tip = 0.0365
+\end{matlaboutput}
+\begin{matlabcode}
+Force_tip_rated = rated_torque_100K/beam_ball_at_tip % Newton max at tip rated. 
+\end{matlabcode}
+\begin{matlaboutput}
+Force_tip_rated = 1.6119
+\end{matlaboutput}
+\begin{matlabcode}
+max_kg_tip_rated = Force_tip_rated/g % Kg, max weigth for moving. The max veigth is 2,83 g and we want 170. it will proberly be ok, but we need to recalculate.
+\end{matlabcode}
+\begin{matlaboutput}
+max_kg_tip_rated = 0.1643
+\end{matlaboutput}
+\begin{matlabcode}
+a_L = (Force_tip_rated*beam_ball_at_tip)/moment_inertia_ball_at_tip% % rad/s^2 max angular acceleration
+\end{matlabcode}
+\begin{matlaboutput}
+a_L = 14.7924
+\end{matlaboutput}
+
+
+\matlabheading{Torque at tip max acceleration}
+
+\begin{matlabcode}
+Force_tip = Force_tip_rated-Static_torque_down_from_ball % N, min Newton avalebale if the ball is at the tip when moving delta small
+\end{matlabcode}
+\begin{matlaboutput}
+Force_tip = 1.5838
+\end{matlaboutput}
+\begin{matlabcode}
+Torque_tip_moving_down = Force_tip*beam_ball_at_tip % Nm, This is the surplus of torque when there is movement at the worst time to keep the temperature low
+\end{matlabcode}
+\begin{matlaboutput}
+Torque_tip_moving_down = 0.5306
+\end{matlaboutput}
+\begin{matlabcode}
+a_L_min = Torque_tip_moving_down/moment_inertia_ball_at_tip % rad/s^2, delta period it can angular acceleration downward
+\end{matlabcode}
+\begin{matlaboutput}
+a_L_min = 14.5350
+\end{matlaboutput}
+
+
+\matlabheading{Max torque when ball is going down}
+
+\begin{matlabcode}
+% We know the ball on the tip cannot accelerate faster than 9.81m/s^2 going
+% down from Horisontalitet, then it takes off. To have contact, the acceleration must be less. Then find the maximum torque applied.
+acc_constant = linspace(0,9.81,100); % m/s^2
+max_alpha = acc_constant/beam_ball_at_tip % Rad/s^2, this means the max acceleration must be 6 m/s^2 at tip
+\end{matlabcode}
+\begin{matlaboutput}
+max_alpha = 1x100    
+         0    0.2958    0.5916    0.8874    1.1831    1.4789    1.7747    2.0705    2.3663    2.6621    2.9578    3.2536    3.5494    3.8452    4.1410    4.4368    4.7326    5.0283    5.3241    5.6199    5.9157    6.2115    6.5073    6.8031    7.0988    7.3946    7.6904    7.9862    8.2820    8.5778    8.8735    9.1693    9.4651    9.7609   10.0567   10.3525   10.6483   10.9440   11.2398   11.5356   11.8314   12.1272   12.4230   12.7188   13.0145   13.3103   13.6061   13.9019   14.1977   14.4935
+
+\end{matlaboutput}
+\begin{matlabcode}
+max_toqrue_when_moving_down = moment_of_initertia_beam*max_alpha - (ball_max_wigth*10^(-3)*(g-acc_constant)*beam_ball_at_tip) % max torque the servo can give so the ball dont fall off
+\end{matlabcode}
+\begin{matlaboutput}
+max_toqrue_when_moving_down = 1x100    
+   -0.0094    0.0014    0.0122    0.0230    0.0338    0.0445    0.0553    0.0661    0.0769    0.0877    0.0985    0.1093    0.1201    0.1309    0.1417    0.1524    0.1632    0.1740    0.1848    0.1956    0.2064    0.2172    0.2280    0.2388    0.2496    0.2603    0.2711    0.2819    0.2927    0.3035    0.3143    0.3251    0.3359    0.3467    0.3574    0.3682    0.3790    0.3898    0.4006    0.4114    0.4222    0.4330    0.4438    0.4546    0.4653    0.4761    0.4869    0.4977    0.5085    0.5193
+
+\end{matlaboutput}
+\begin{matlabcode}
+plot(acc_constant,max_toqrue_when_moving_down)
+title('Nm servo based on ball at tip rotating down')
+xlabel('m/s^2')
+ylabel('Nm by servo')
+grid on
+\end{matlabcode}
+\begin{center}
+\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_0.eps}
+\end{center}
+
+\end{document}

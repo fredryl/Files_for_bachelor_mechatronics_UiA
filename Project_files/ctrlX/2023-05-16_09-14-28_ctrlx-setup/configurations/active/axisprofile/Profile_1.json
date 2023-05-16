@@ -1,0 +1,154 @@
+{
+    "$persistence_header": {
+        "bfbs": "./bfbs/config.bfbs",
+        "version": "0.0.2"
+    },
+    "$schema": "./types/config_schema.json",
+    "deviceAddress": 1001,
+    "deviceName": "ctrlX_DRIVE_XMS_SoE_",
+    "inputBuffer": "fieldbuses/ethercat/master/instances/ethercatmaster/realtime_data/input",
+    "inputMapping": {
+        "mapping": [
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "diagcode"
+            },
+            {
+                "datalayerURI": "ctrlX_DRIVE_XMS_SoE_/AT.Position_feedback_value_1",
+                "profileVar": "BASE",
+                "valueID": "position"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe1-active"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe1-makfal"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe1-negedg"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe1-neglat"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe1-posdif"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe1-posedg"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe1-poslat"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe2-active"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe2-makfal"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe2-negedg"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe2-neglat"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe2-posdif"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe2-posedg"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "probe2-poslat"
+            },
+            {
+                "datalayerURI": "ctrlX_DRIVE_XMS_SoE_/AT.Drive_status_word",
+                "profileVar": "BASE",
+                "valueID": "statusword"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "switch-neglim"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "switch-poslim"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "switch-ref"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "velocity"
+            }
+        ]
+    },
+    "outputBuffer": "fieldbuses/ethercat/master/instances/ethercatmaster/realtime_data/output",
+    "outputMapping": {
+        "mapping": [
+            {
+                "datalayerURI": "ctrlX_DRIVE_XMS_SoE_/MDT.Master_control_word",
+                "profileVar": "BASE",
+                "valueID": "controlword"
+            },
+            {
+                "datalayerURI": "ctrlX_DRIVE_XMS_SoE_/MDT.Position_command_value",
+                "profileVar": "BASE",
+                "valueID": "position"
+            },
+            {
+                "datalayerURI": "",
+                "profileVar": "BASE",
+                "valueID": "velocity"
+            }
+        ]
+    },
+    "profileBasicData": {
+        "name": "Profile_1",
+        "type": "Servodrive_over_Ethercat"
+    },
+    "scalingInfo": {
+        "denominator": 1,
+        "numerator": 1,
+        "resolution": 1,
+        "scalingStrategy": {
+            "strategy": "SOE_STANDARD"
+        },
+        "scalingType": {
+            "scalingType": "UNDEFINED"
+        }
+    }
+}

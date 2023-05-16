@@ -1,0 +1,53 @@
+{
+"$schema": "https://json-schema.org/draft/2019-09/schema",
+"definitions": {
+"comm_datalayer_AccessType" : {
+"type" : "string",
+"enum": ["Unknown", "Raw", "TripleBuffer", "NTelBuf"]
+},
+"comm_datalayer_MemoryType" : {
+"type" : "string",
+"enum": ["Unknown", "Input", "Output", "SharedRetain", "Shared"]
+},
+"comm_datalayer_Memory" : {
+"type" : "object",
+"properties" : {
+"type" : {
+"$ref" : "#/definitions/comm_datalayer_MemoryType"
+},
+"id" : {
+"type" : "string"
+},
+"sizeBytes" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"accessType" : {
+"$ref" : "#/definitions/comm_datalayer_AccessType"
+}
+},
+"additionalProperties" : false
+},
+"comm_datalayer_NTelBufferConfig" : {
+"type" : "object",
+"properties" : {
+"defaultN" : {
+"type" : "integer", "minimum" : 0, "maximum" : 65535
+}
+},
+"additionalProperties" : false
+},
+"comm_datalayer_RealtimeConfig" : {
+"type" : "object",
+"properties" : {
+"defaultInputAcessType" : {
+"$ref" : "#/definitions/comm_datalayer_AccessType"
+},
+"nTelBufConfig" : {
+"$ref" : "#/definitions/comm_datalayer_NTelBufferConfig"
+}
+},
+"additionalProperties" : false
+}
+},
+"$ref" : "#/definitions/comm_datalayer_RealtimeConfig"
+}

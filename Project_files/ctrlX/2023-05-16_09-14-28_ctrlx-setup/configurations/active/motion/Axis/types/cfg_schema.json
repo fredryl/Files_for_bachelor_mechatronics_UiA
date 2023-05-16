@@ -1,0 +1,302 @@
+{
+"$schema": "https://json-schema.org/draft/2019-09/schema",
+"definitions": {
+"motion_core_fbtypes_EstopType" : {
+"type" : "string",
+"enum": ["ESTOP_PRESERVE", "ESTOP_AXIS_LIMIT", "ESTOP_USER_LIMIT", "ESTOP_TORQUE_FREE", "ESTOP_BEST_POSBLE_DEC"]
+},
+"motion_core_fbtypes_AxsCfg" : {
+"type" : "object",
+"properties" : {
+"objectType" : {
+"type" : "string"
+},
+"axisProfileName" : {
+"type" : "string"
+},
+"limits" : {
+"$ref" : "#/definitions/motion_core_fbtypes_AxsCfgLimits"
+},
+"functions" : {
+"$ref" : "#/definitions/motion_core_fbtypes_AxsCfgFunctions"
+},
+"properties" : {
+"$ref" : "#/definitions/motion_core_fbtypes_AxsCfgProperties"
+},
+"units" : {
+"$ref" : "#/definitions/motion_core_fbtypes_UnitCfgObj"
+},
+"kinProperties" : {
+"$ref" : "#/definitions/motion_core_fbtypes_AxsCfgKinProperties"
+},
+"devErrReaction" : {
+"$ref" : "#/definitions/motion_core_fbtypes_AxsCfgDeviceErrorReaction"
+},
+"rtInputs" : {
+"$ref" : "#/definitions/motion_core_fbtypes_RTInputsCfg"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_AxsCfgCoupling" : {
+"type" : "object",
+"properties" : {
+"gantry" : {
+"$ref" : "#/definitions/motion_core_fbtypes_AxsCfgGantry"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_AxsCfgDeviceErrorReaction" : {
+"type" : "object",
+"properties" : {
+"userEstopLim" : {
+"$ref" : "#/definitions/motion_core_fbtypes_AxsCfgEstopDynamicLimits"
+},
+"estopSettings" : {
+"$ref" : "#/definitions/motion_core_fbtypes_AxsCfgEstopSettings"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_AxsCfgEstopDynamicLimits" : {
+"type" : "object",
+"properties" : {
+"dec" : {
+"type" : "number"
+},
+"jrkDec" : {
+"type" : "number"
+},
+"decUnit" : {
+"type" : "string"
+},
+"jrkDecUnit" : {
+"type" : "string"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_AxsCfgEstopSettings" : {
+"type" : "object",
+"properties" : {
+"estopToNoDevErr" : {
+"$ref" : "#/definitions/motion_core_fbtypes_EstopType"
+},
+"estopToNoDeviceInfo" : {
+"$ref" : "#/definitions/motion_core_fbtypes_EstopType"
+},
+"estopToDevLightErr" : {
+"$ref" : "#/definitions/motion_core_fbtypes_EstopType"
+},
+"estopToFieldbusErr" : {
+"$ref" : "#/definitions/motion_core_fbtypes_EstopType"
+},
+"estopToDevCriticalErr" : {
+"$ref" : "#/definitions/motion_core_fbtypes_EstopType"
+},
+"estopToDevFatalErr" : {
+"$ref" : "#/definitions/motion_core_fbtypes_EstopType"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_AxsCfgFunctions" : {
+"type" : "object",
+"properties" : {
+"coupling" : {
+"$ref" : "#/definitions/motion_core_fbtypes_AxsCfgCoupling"
+},
+"calculationPipelines" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/motion_sync_fbtypes_CalcPipelineCfg"}
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_AxsCfgGantry" : {
+"type" : "object",
+"properties" : {
+"isMember" : {
+"type" : "boolean"
+},
+"moveAllowed" : {
+"type" : "boolean"
+},
+"multiBrakeDyn" : {
+"type" : "boolean"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_AxsCfgKinProperties" : {
+"type" : "object",
+"properties" : {
+"accReserve" : {
+"type" : "number"
+},
+"jrkReserve" : {
+"type" : "number"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_AxsCfgLimits" : {
+"type" : "object",
+"properties" : {
+"posMin" : {
+"type" : "number"
+},
+"posMax" : {
+"type" : "number"
+},
+"velPos" : {
+"type" : "number"
+},
+"velNeg" : {
+"type" : "number"
+},
+"acc" : {
+"type" : "number"
+},
+"dec" : {
+"type" : "number"
+},
+"jrkAcc" : {
+"type" : "number"
+},
+"jrkDec" : {
+"type" : "number"
+},
+"posMinUnit" : {
+"type" : "string"
+},
+"posMaxUnit" : {
+"type" : "string"
+},
+"velPosUnit" : {
+"type" : "string"
+},
+"velNegUnit" : {
+"type" : "string"
+},
+"accUnit" : {
+"type" : "string"
+},
+"decUnit" : {
+"type" : "string"
+},
+"jrkAccUnit" : {
+"type" : "string"
+},
+"jrkDecUnit" : {
+"type" : "string"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_AxsCfgProperties" : {
+"type" : "object",
+"properties" : {
+"axsType" : {
+"type" : "string"
+},
+"modulo" : {
+"type" : "boolean"
+},
+"moduloValue" : {
+"type" : "number"
+},
+"moduloValueUnit" : {
+"type" : "string"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_RTInputsCfg" : {
+"type" : "object",
+"properties" : {
+"doubleArraySize" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"int64ArraySize" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_UnitCfgObj" : {
+"type" : "object",
+"properties" : {
+"default" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/motion_core_fbtypes_UnitCfgObjSingle"}
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_UnitCfgObjSingle" : {
+"type" : "object",
+"properties" : {
+"valueType" : {
+"type" : "string"
+},
+"abbreviation" : {
+"type" : "string"
+}
+},
+"required" : ["valueType"],
+"additionalProperties" : false
+},
+"motion_sync_fbtypes_CalcPipelineCfg" : {
+"type" : "object",
+"properties" : {
+"name" : {
+"type" : "string"
+},
+"generic" : {
+"type" : "boolean"
+},
+"steps" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/motion_sync_fbtypes_CalcStepCfg"}
+}
+},
+"additionalProperties" : false
+},
+"motion_sync_fbtypes_CalcStepCfg" : {
+"type" : "object",
+"properties" : {
+"stepID" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"type" : {
+"type" : "string"
+},
+"inputs" : {
+"type" : "array", "items" : {"type" : "string"}
+},
+"parameter" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/motion_sync_fbtypes_CalcStepCfgSingleParam"}
+}
+},
+"additionalProperties" : false
+},
+"motion_sync_fbtypes_CalcStepCfgSingleParam" : {
+"type" : "object",
+"properties" : {
+"name" : {
+"type" : "string"
+},
+"valueDouble" : {
+"type" : "number"
+},
+"valueInt" : {
+"type" : "integer", "minimum" : -9223372036854775808, "maximum" : 9223372036854775807
+},
+"valueString" : {
+"type" : "string"
+}
+},
+"additionalProperties" : false
+}
+},
+"$ref" : "#/definitions/motion_core_fbtypes_AxsCfg"
+}

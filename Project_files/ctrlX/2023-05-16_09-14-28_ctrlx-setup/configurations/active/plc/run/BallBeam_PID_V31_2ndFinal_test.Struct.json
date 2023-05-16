@@ -1,0 +1,652 @@
+{
+  "Name": "Device",
+  "IconName": null,
+  "EcadId": "",
+  "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+  "Type": 4096,
+  "Id": "1001 0080",
+  "ModuleId": null,
+  "Version": "1.18.20.0",
+  "ObjectGuid": "210a0761-0b29-48d0-9965-205a30d8a56a",
+  "SlotIndex": 0,
+  "StructuralItems": [
+    {
+      "Name": "PLC Logic",
+      "IconName": null,
+      "EcadId": null,
+      "TypeName": "_3S.CoDeSys.PlcLogicObject.PlcLogicObject",
+      "Type": 0,
+      "Id": null,
+      "ModuleId": null,
+      "Version": null,
+      "ObjectGuid": "d7596047-a1b3-4cb5-8fe9-b8fdbc3055d9",
+      "SlotIndex": 0,
+      "StructuralItems": [
+        {
+          "Name": "Application",
+          "IconName": null,
+          "EcadId": null,
+          "TypeName": "_3S.CoDeSys.ApplicationObject.ApplicationObject",
+          "Type": 0,
+          "Id": null,
+          "ModuleId": null,
+          "Version": null,
+          "ObjectGuid": "8a042a52-0528-4f48-85c2-c77c29a7f56b",
+          "SlotIndex": 0,
+          "StructuralItems": [
+            {
+              "Name": "Library Manager",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.LibManObject.LibManObject",
+              "Type": 0,
+              "Id": null,
+              "ModuleId": null,
+              "Version": null,
+              "ObjectGuid": "3ba22a42-67ae-45fd-8a72-9a06bfd66733",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            },
+            {
+              "Name": "PLC_PRG",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+              "Type": 0,
+              "Id": null,
+              "ModuleId": null,
+              "Version": null,
+              "ObjectGuid": "f498c1d8-dd28-4914-ad12-05fc0d3d6ae8",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            },
+            {
+              "Name": "Task Configuration",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.TaskConfigObject.TaskConfigObject",
+              "Type": 0,
+              "Id": null,
+              "ModuleId": null,
+              "Version": null,
+              "ObjectGuid": "77d08093-163e-4b36-a52e-57d9307eeca4",
+              "SlotIndex": 0,
+              "StructuralItems": [
+                {
+                  "Name": "MainTask",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.TaskObject.TaskObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "3db658b7-e81f-4463-a8f3-cbfd252a89e4",
+                  "SlotIndex": 0,
+                  "StructuralItems": [
+                    {
+                      "Name": "PLC_PRG",
+                      "IconName": null,
+                      "EcadId": null,
+                      "TypeName": "_3S.CoDeSys.TaskObject.TaskPOUCallObject",
+                      "Type": 0,
+                      "Id": null,
+                      "ModuleId": null,
+                      "Version": null,
+                      "ObjectGuid": "9d8c3d93-aed0-4610-b59c-c85c56c88ca3",
+                      "SlotIndex": 0,
+                      "StructuralItems": []
+                    }
+                  ]
+                },
+                {
+                  "Name": "MainTaskMotIf",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.TaskObject.TaskObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "be22be8d-a3eb-40f8-83ca-81c24403a32d",
+                  "SlotIndex": 0,
+                  "StructuralItems": [
+                    {
+                      "Name": "AxisInterface",
+                      "IconName": null,
+                      "EcadId": null,
+                      "TypeName": "_3S.CoDeSys.TaskObject.TaskPOUCallObject",
+                      "Type": 0,
+                      "Id": null,
+                      "ModuleId": null,
+                      "Version": null,
+                      "ObjectGuid": "35f83a8c-ebb1-46f8-8bdd-b53177b8f576",
+                      "SlotIndex": 0,
+                      "StructuralItems": []
+                    },
+                    {
+                      "Name": "AxisIfMotionProg",
+                      "IconName": null,
+                      "EcadId": null,
+                      "TypeName": "_3S.CoDeSys.TaskObject.TaskPOUCallObject",
+                      "Type": 0,
+                      "Id": null,
+                      "ModuleId": null,
+                      "Version": null,
+                      "ObjectGuid": "0613be61-0381-4b05-ad2f-8a556d59b6fe",
+                      "SlotIndex": 0,
+                      "StructuralItems": []
+                    },
+                    {
+                      "Name": "AxisIfPlcProg",
+                      "IconName": null,
+                      "EcadId": null,
+                      "TypeName": "_3S.CoDeSys.TaskObject.TaskPOUCallObject",
+                      "Type": 0,
+                      "Id": null,
+                      "ModuleId": null,
+                      "Version": null,
+                      "ObjectGuid": "0082c066-7782-4b78-8c71-a53693338703",
+                      "SlotIndex": 0,
+                      "StructuralItems": []
+                    }
+                  ]
+                },
+                {
+                  "Name": "MotionTask",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.TaskObject.TaskObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "faa4e80b-0771-456a-b43e-b3737ff8242b",
+                  "SlotIndex": 0,
+                  "StructuralItems": [
+                    {
+                      "Name": "PID_ST",
+                      "IconName": null,
+                      "EcadId": null,
+                      "TypeName": "_3S.CoDeSys.TaskObject.TaskPOUCallObject",
+                      "Type": 0,
+                      "Id": null,
+                      "ModuleId": null,
+                      "Version": null,
+                      "ObjectGuid": "61936996-4032-4d66-9acf-a29b93d582e5",
+                      "SlotIndex": 0,
+                      "StructuralItems": []
+                    }
+                  ]
+                },
+                {
+                  "Name": "TrendRecordingTask",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.TaskObject.TaskObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "cd67e151-4b82-43dc-8665-9ed3d5bcd5f3",
+                  "SlotIndex": 0,
+                  "StructuralItems": [
+                    {
+                      "Name": "VisuTrendStorageAccess.GlobalInstances.g_TrendRecordingManager.CyclicCall",
+                      "IconName": null,
+                      "EcadId": null,
+                      "TypeName": "_3S.CoDeSys.TaskObject.TaskPOUCallObject",
+                      "Type": 0,
+                      "Id": null,
+                      "ModuleId": null,
+                      "Version": null,
+                      "ObjectGuid": "ef3a6bdf-b917-41d5-949d-348b2a13d440",
+                      "SlotIndex": 0,
+                      "StructuralItems": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Name": "CheckFunctions",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.DefaultNavigators.FolderObject",
+              "Type": 0,
+              "Id": null,
+              "ModuleId": null,
+              "Version": null,
+              "ObjectGuid": "ee55f179-14c2-473a-96f0-b9b52e147e14",
+              "SlotIndex": 0,
+              "StructuralItems": [
+                {
+                  "Name": "CheckBounds",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObjectCheckFunction",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "5c57242d-0abc-44e9-a367-983e29473911",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "CheckDivDInt",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "58c0f176-f4bb-46bb-8dab-1ed03dd53ad8",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "CheckDivLInt",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "609648a1-2e58-455b-9c4e-d880496e9f4a",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "CheckDivLReal",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "9803d488-e75a-4e11-a200-6e673d6e224f",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "CheckDivReal",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "eeb3df6d-e42d-4119-9c95-6f1833bef139",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "CheckLRangeSigned",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "8ef16baf-6c68-4fe0-b526-10ef481f2fe5",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "CheckLRangeUnsigned",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "521ddf74-7d27-4f28-a796-a061adfdde45",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "CheckPointer",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObjectCheckFunction",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "5958a7c4-4190-4632-9e8d-a0514bb4166b",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "CheckRangeSigned",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "6003db3f-7c51-4503-b0d5-21bc7b4782e5",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "CheckRangeUnsigned",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "ec010e8d-bce5-4419-adff-2749696bf6d1",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                }
+              ]
+            },
+            {
+              "Name": "MotionInterface",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.DefaultNavigators.FolderObject",
+              "Type": 0,
+              "Id": null,
+              "ModuleId": null,
+              "Version": null,
+              "ObjectGuid": "7500e6e2-b717-4659-ab21-0b7bf9d6cd74",
+              "SlotIndex": 0,
+              "StructuralItems": [
+                {
+                  "Name": "GlobalAxisDefines",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.GVLObject.GVLObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "ab70bda9-e364-4244-8eec-6c395de578c2",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "AxisIfMotionProg",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "5e5ed0bc-429d-46b6-9540-ae2afc37da4b",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "AxisIfPlcProg",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "b7b6d660-1e12-4fa7-8343-42649de2adc2",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "AxisInterface",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "9b101493-9b75-4ed7-a34b-dccbb5cacdc8",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                },
+                {
+                  "Name": "OverviewAxes",
+                  "IconName": null,
+                  "EcadId": null,
+                  "TypeName": "_3S.CoDeSys.VisualObject.VisualObject",
+                  "Type": 0,
+                  "Id": null,
+                  "ModuleId": null,
+                  "Version": null,
+                  "ObjectGuid": "aefde473-aad0-4322-94a1-e802ec9af54a",
+                  "SlotIndex": 0,
+                  "StructuralItems": []
+                }
+              ]
+            },
+            {
+              "Name": "Visualization Manager",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.VisualObject.VisualManagerObject",
+              "Type": 0,
+              "Id": null,
+              "ModuleId": null,
+              "Version": null,
+              "ObjectGuid": "5523416a-1e0e-4e6a-bf0d-0404a2ec5310",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            },
+            {
+              "Name": "Symbol Configuration",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.SymbolConfigObject.SymbolConfigObject",
+              "Type": 0,
+              "Id": null,
+              "ModuleId": null,
+              "Version": null,
+              "ObjectGuid": "ec25dbcb-8ec8-4b06-a412-590d3755533a",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            },
+            {
+              "Name": "GVL",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.GVLObject.GVLObject",
+              "Type": 0,
+              "Id": null,
+              "ModuleId": null,
+              "Version": null,
+              "ObjectGuid": "6b9d10b3-d90d-4cd1-a644-92e8bd9a4e76",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            },
+            {
+              "Name": "HMI",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.VisualObject.VisualObject",
+              "Type": 0,
+              "Id": null,
+              "ModuleId": null,
+              "Version": null,
+              "ObjectGuid": "6b144f8d-bd38-4922-bc1d-31fb0266c743",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            },
+            {
+              "Name": "PID_ST",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.POUObject.POUObject",
+              "Type": 0,
+              "Id": null,
+              "ModuleId": null,
+              "Version": null,
+              "ObjectGuid": "1e4c2c18-2d52-4061-930e-798940dc5aaf",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            },
+            {
+              "Name": "Trace01",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.TraceObject.TraceObject",
+              "Type": 0,
+              "Id": null,
+              "ModuleId": null,
+              "Version": null,
+              "ObjectGuid": "cc7cd560-be35-4982-b24d-8ae251a2fa1a",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Realtime_Data",
+      "IconName": null,
+      "EcadId": null,
+      "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+      "Type": 42420,
+      "Id": "1001 0000",
+      "ModuleId": null,
+      "Version": "1.8.0.0",
+      "ObjectGuid": "81511896-bebf-4cfb-b4e8-1cc3b7843b07",
+      "SlotIndex": 0,
+      "StructuralItems": [
+        {
+          "Name": "motion_axs_Axis_Y_cmd_input",
+          "IconName": null,
+          "EcadId": null,
+          "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+          "Type": 42430,
+          "Id": "1001 0000",
+          "ModuleId": null,
+          "Version": "1.8.0.0",
+          "ObjectGuid": "96d2343c-3e18-4698-a4ce-7ab6ee466076",
+          "SlotIndex": 0,
+          "StructuralItems": [
+            {
+              "Name": "double_1",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+              "Type": 42450,
+              "Id": "1001 0000",
+              "ModuleId": null,
+              "Version": "1.8.0.0",
+              "ObjectGuid": "f9729937-1911-4012-b745-0521347f3461",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            }
+          ]
+        },
+        {
+          "Name": "motion_cmd_input",
+          "IconName": null,
+          "EcadId": null,
+          "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+          "Type": 42430,
+          "Id": "1001 0000",
+          "ModuleId": null,
+          "Version": "1.8.0.0",
+          "ObjectGuid": "e00d15d2-139b-4196-ad49-ceaeca0a2d10",
+          "SlotIndex": 0,
+          "StructuralItems": [
+            {
+              "Name": "double",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+              "Type": 42450,
+              "Id": "1001 0000",
+              "ModuleId": null,
+              "Version": "1.8.0.0",
+              "ObjectGuid": "8ceb0a59-df89-41cc-bada-d28b8d90fa3b",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            }
+          ]
+        },
+        {
+          "Name": "motion_state_functions_somo_rt_data",
+          "IconName": null,
+          "EcadId": null,
+          "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+          "Type": 42430,
+          "Id": "1001 0000",
+          "ModuleId": null,
+          "Version": "1.8.0.0",
+          "ObjectGuid": "631c2f83-11f0-4911-8e39-f1e59482b98f",
+          "SlotIndex": 0,
+          "StructuralItems": [
+            {
+              "Name": "signals_in",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+              "Type": 42450,
+              "Id": "1001 0000",
+              "ModuleId": null,
+              "Version": "1.8.0.0",
+              "ObjectGuid": "714dc89e-1913-473c-aa94-7c743071fac8",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            },
+            {
+              "Name": "signals_out",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+              "Type": 42450,
+              "Id": "1001 0000",
+              "ModuleId": null,
+              "Version": "1.8.0.0",
+              "ObjectGuid": "125f02a8-c31a-477f-a4e8-2c6f4415eba4",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            }
+          ]
+        },
+        {
+          "Name": "ethercat_master_instances_ethercatmaster",
+          "IconName": null,
+          "EcadId": null,
+          "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+          "Type": 42430,
+          "Id": "1001 0000",
+          "ModuleId": null,
+          "Version": "1.8.0.0",
+          "ObjectGuid": "a873708d-96d3-4ca9-8f05-adb0c2d8873b",
+          "SlotIndex": 0,
+          "StructuralItems": [
+            {
+              "Name": "ctrlX_DRIVE_XMS_SoE_",
+              "IconName": null,
+              "EcadId": null,
+              "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+              "Type": 42450,
+              "Id": "1001 0000",
+              "ModuleId": null,
+              "Version": "1.8.0.0",
+              "ObjectGuid": "677941fa-2464-49c6-92ac-c567a80ffbab",
+              "SlotIndex": 0,
+              "StructuralItems": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+    "$persistence_header": {
+        "bfbs": "./bfbs/enablingstates.bfbs",
+        "version": "0.0.2"
+    },
+    "$schema": "./types/enablingstates_schema.json",
+    "enablingStates": [
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "comm.opcua.licensing",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "comm.opcua.sdk",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "comm.opcua.server",
+            "warnings": false
+        },
+        {
+            "errors": true,
+            "messages": false,
+            "unitName": "common.log.diagnosis",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "comm.opcua.certificate",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "comm.datalayer.core",
+            "warnings": false
+        },
+        {
+            "errors": true,
+            "messages": false,
+            "unitName": "common.log.trace",
+            "warnings": false
+        }
+    ],
+    "machineIdentification": "7260416704826"
+}

@@ -1,0 +1,215 @@
+{
+"$schema": "https://json-schema.org/draft/2019-09/schema",
+"definitions": {
+"common_scheduler_fbs_CallableWdgConfig" : {
+"type" : "string",
+"enum": ["WDG_HW_TASK", "WDG_HW", "WDG_NONE", "WDG_DEFAULT"]
+},
+"common_scheduler_watchdog_errorreaction_fbs_CurrentClass" : {
+"type" : "string",
+"enum": ["F0", "F6"]
+},
+"common_scheduler_watchdog_errorreaction_fbs_CurrentConfiguration" : {
+"type" : "string",
+"enum": ["CONTINUE", "DISABLE"]
+},
+"common_scheduler_watchdog_fbs_CurrentType" : {
+"type" : "string",
+"enum": ["CYCLE", "NONE"]
+},
+"common_scheduler_watchdog_fbs_WatchdogVariant" : {
+"type" : "string",
+"enum": ["NONE", "Cyclic", "Duration"]
+},
+"common_scheduler_fbs_Callable" : {
+"type" : "object",
+"properties" : {
+"name" : {
+"type" : "string"
+},
+"index" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"arguments" : {
+"type" : "array", "items" : {"type" : "string"}
+},
+"id" : {
+"type" : "string"
+},
+"alias" : {
+"type" : "string"
+},
+"sync" : {
+"$ref" : "#/definitions/common_scheduler_fbs_SyncPoints"
+},
+"watchdog" : {
+"$ref" : "#/definitions/common_scheduler_fbs_CallableWdgConfig"
+}
+},
+"required" : ["name"],
+"additionalProperties" : false
+},
+"common_scheduler_fbs_SyncPoints" : {
+"type" : "object",
+"properties" : {
+"after" : {
+"type" : "array", "items" : {"type" : "string"}
+},
+"before" : {
+"type" : "array", "items" : {"type" : "string"}
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_fbs_Task" : {
+"type" : "object",
+"properties" : {
+"name" : {
+"type" : "string"
+},
+"priority" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"affinity" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"stacksize" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"event" : {
+"type" : "string"
+},
+"cycletime" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+}
+},
+"required" : ["name"],
+"additionalProperties" : false
+},
+"common_scheduler_fbs2_Program" : {
+"type" : "object",
+"properties" : {
+"task" : {
+"$ref" : "#/definitions/common_scheduler_fbs_Task"
+},
+"callables" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/common_scheduler_fbs_Callable"}
+},
+"watchdog" : {
+"$ref" : "#/definitions/common_scheduler_watchdog_fbs_Watchdog"
+},
+"sequence" : {
+"type" : "array", "items" : {"type" : "string"}
+}
+},
+"required" : ["task"],
+"additionalProperties" : false
+},
+"common_scheduler_fbs2_Programs" : {
+"type" : "object",
+"properties" : {
+"programs" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/common_scheduler_fbs2_Program"}
+},
+"callablePool" : {
+"type" : "array", "items" : {"type" : "string"}
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_watchdog_errorreaction_fbs_Class" : {
+"type" : "object",
+"properties" : {
+"type" : {
+"$ref" : "#/definitions/common_scheduler_watchdog_errorreaction_fbs_CurrentClass"
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_watchdog_errorreaction_fbs_Configuration" : {
+"type" : "object",
+"properties" : {
+"type" : {
+"$ref" : "#/definitions/common_scheduler_watchdog_errorreaction_fbs_CurrentConfiguration"
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_watchdog_fbs_Cyclic" : {
+"type" : "object",
+"properties" : {
+"errorCount" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"reset" : {
+"type" : "boolean"
+},
+"errorReaction" : {
+"$ref" : "#/definitions/common_scheduler_watchdog_fbs_ErrorReaction"
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_watchdog_fbs_Duration" : {
+"type" : "object",
+"properties" : {
+"time" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"errorCount" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"reset" : {
+"type" : "boolean"
+},
+"errorReaction" : {
+"$ref" : "#/definitions/common_scheduler_watchdog_fbs_ErrorReaction"
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_watchdog_fbs_ErrorReaction" : {
+"type" : "object",
+"properties" : {
+"class" : {
+"$ref" : "#/definitions/common_scheduler_watchdog_errorreaction_fbs_Class"
+},
+"configuration" : {
+"$ref" : "#/definitions/common_scheduler_watchdog_errorreaction_fbs_Configuration"
+},
+"maxConsecutiveErrors" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_watchdog_fbs_Type" : {
+"type" : "object",
+"properties" : {
+"type" : {
+"$ref" : "#/definitions/common_scheduler_watchdog_fbs_CurrentType"
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_watchdog_fbs_Watchdog" : {
+"type" : "object",
+"properties" : {
+"name" : {
+"type" : "string"
+},
+"type" : {
+"$ref" : "#/definitions/common_scheduler_watchdog_fbs_Type"
+},
+"variant_type" : {
+"$ref" : "#/definitions/common_scheduler_watchdog_fbs_WatchdogVariant"
+},
+"variant" : {
+"anyOf": [{ "$ref" : "#/definitions/common_scheduler_watchdog_fbs_Cyclic" },{ "$ref" : "#/definitions/common_scheduler_watchdog_fbs_Duration" }]
+}
+},
+"additionalProperties" : false
+}
+},
+"$ref" : "#/definitions/common_scheduler_fbs2_Programs"
+}

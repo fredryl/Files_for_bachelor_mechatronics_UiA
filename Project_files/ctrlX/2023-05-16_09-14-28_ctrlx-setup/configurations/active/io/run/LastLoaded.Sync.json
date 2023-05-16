@@ -1,0 +1,41 @@
+{
+  "IsSynced": true,
+  "SyncMode": 1,
+  "InSyncWithRuntime": true,
+  "ApplicationType": "io",
+  "Configuration": "appdata",
+  "Solution": "DefaultSolution",
+  "ControllerGuid": "7bcd6b92-453d-4e02-bf17-40de386b5b80",
+  "LastChange": 638150833451192604,
+  "MachineName": "AAA",
+  "UserName": "andre",
+  "ProjectCompleteFilename": "C:\\Users\\andre\\OneDrive - Universitetet i Agder\\Documents\\My ctrlX\\BallBeam_1.project",
+  "CompilerVersion": null,
+  "OwnVersion": {
+    "Major": 1,
+    "Minor": 2,
+    "Build": 0,
+    "Revision": 0,
+    "MajorRevision": 0,
+    "MinorRevision": 0
+  },
+  "ProductAdditionalFolder": "Default",
+  "ProductProfileName": "ctrlX IO 1.18.1",
+  "ProductId": "ctrlx-works",
+  "ProductVersion": "1.18.2",
+  "ProductVersionText": "WRK-V-0118.2",
+  "SyncModeSave": true,
+  "SyncModeDownload": false,
+  "SyncModeAsk": false,
+  "UserMetaData": {
+    "AAA:andre": {
+      "MachineName": "AAA",
+      "UserName": "andre",
+      "ProjectCompleteFilename": "C:\\Users\\andre\\OneDrive - Universitetet i Agder\\Documents\\My ctrlX\\BallBeam_1.project"
+    }
+  },
+  "SyncDescription": false,
+  "DeviceId": "1001 0090",
+  "DeviceVersion": "1.18.0.0",
+  "UseIoHierachy": true
+}

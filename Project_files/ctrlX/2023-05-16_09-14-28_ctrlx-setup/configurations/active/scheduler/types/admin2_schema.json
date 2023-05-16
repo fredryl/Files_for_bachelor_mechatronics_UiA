@@ -1,0 +1,193 @@
+{
+"$schema": "https://json-schema.org/draft/2019-09/schema",
+"definitions": {
+"common_scheduler_controls_fbs_Controls" : {
+"type" : "string",
+"enum": ["NONE", "Debug"]
+},
+"common_scheduler_fbs_CallableWdgConfig" : {
+"type" : "string",
+"enum": ["WDG_HW_TASK", "WDG_HW", "WDG_NONE", "WDG_DEFAULT"]
+},
+"common_scheduler_fbs_CurrentErrorReaction" : {
+"type" : "string",
+"enum": ["STOP", "CONTINUE"]
+},
+"common_scheduler_fbs_CurrentTrigger" : {
+"type" : "string",
+"enum": ["TIMER", "INTERRUPT"]
+},
+"common_scheduler_fbs2_CurrentState" : {
+"type" : "string",
+"enum": ["OPERATING", "SETUP", "SERVICE", "EXIT"]
+},
+"common_scheduler_controls_fbs_AdminControls" : {
+"type" : "object",
+"properties" : {
+"control_type" : {
+"$ref" : "#/definitions/common_scheduler_controls_fbs_Controls"
+},
+"control" : {
+"anyOf": [{ "$ref" : "#/definitions/common_scheduler_controls_fbs_Debug" }]
+}
+},
+"required" : ["control"],
+"additionalProperties" : false
+},
+"common_scheduler_controls_fbs_Debug" : {
+"type" : "object",
+"properties" : {
+"machine" : {
+"type" : "string"
+}
+},
+"required" : ["machine"],
+"additionalProperties" : false
+},
+"common_scheduler_fbs_StartupErrorReaction" : {
+"type" : "object",
+"properties" : {
+"errorReaction" : {
+"$ref" : "#/definitions/common_scheduler_fbs_CurrentErrorReaction"
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_fbs_Trigger" : {
+"type" : "object",
+"properties" : {
+"trigger" : {
+"$ref" : "#/definitions/common_scheduler_fbs_CurrentTrigger"
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_fbs2_Admin" : {
+"type" : "object",
+"properties" : {
+"startupState" : {
+"$ref" : "#/definitions/common_scheduler_fbs2_CurrentState"
+},
+"startupTimeout" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"startupErrorReaction" : {
+"$ref" : "#/definitions/common_scheduler_fbs_CurrentErrorReaction"
+},
+"triggerSource" : {
+"$ref" : "#/definitions/common_scheduler_fbs_CurrentTrigger"
+},
+"controlDebug_type" : {
+"$ref" : "#/definitions/common_scheduler_controls_fbs_Controls"
+},
+"controlDebug" : {
+"anyOf": [{ "$ref" : "#/definitions/common_scheduler_controls_fbs_Debug" }]
+},
+"cpuInfo" : {
+"$ref" : "#/definitions/common_scheduler_fbs2_CpuInfo"
+},
+"hardwareWatchdogRequired" : {
+"type" : "boolean"
+},
+"watchdogDefaultValue" : {
+"$ref" : "#/definitions/common_scheduler_fbs_CallableWdgConfig"
+},
+"utilization" : {
+"$ref" : "#/definitions/common_scheduler_fbs2_UtilizationThreshold"
+},
+"callableTimeouts" : {
+"$ref" : "#/definitions/common_scheduler_fbs2_CallableTimeouts"
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_fbs2_CallableTimeouts" : {
+"type" : "object",
+"properties" : {
+"begin" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"execute" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"end" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_fbs2_CpuInfo" : {
+"type" : "object",
+"properties" : {
+"cpuCoresTotal" : {
+"type" : "array", "items" : {"type" : "integer", "minimum" : 0, "maximum" : 4294967295}
+},
+"cpuCoresActive" : {
+"type" : "array", "items" : {"type" : "integer", "minimum" : 0, "maximum" : 4294967295}
+},
+"cpuCoresRealtime" : {
+"type" : "array", "items" : {"type" : "integer", "minimum" : 0, "maximum" : 4294967295}
+},
+"cpuCoresNonRealtime" : {
+"type" : "array", "items" : {"type" : "integer", "minimum" : 0, "maximum" : 4294967295}
+},
+"cpuCoreRealtimeMax" : {
+"type" : "integer", "minimum" : -2147483648, "maximum" : 2147483647
+},
+"cpuCoreRealtimeMin" : {
+"type" : "integer", "minimum" : -2147483648, "maximum" : 2147483647
+},
+"cpuCoreRealtimeDefault" : {
+"type" : "integer", "minimum" : -2147483648, "maximum" : 2147483647
+},
+"cpuCoreNonRealtimeMax" : {
+"type" : "integer", "minimum" : -2147483648, "maximum" : 2147483647
+},
+"cpuCoreNonRealtimeMin" : {
+"type" : "integer", "minimum" : -2147483648, "maximum" : 2147483647
+},
+"cpuCoreNonRealtimeDefault" : {
+"type" : "integer", "minimum" : -2147483648, "maximum" : 2147483647
+},
+"variationId" : {
+"type" : "string"
+},
+"cpuCoreHwWdg" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"cpuCorePtpTimer" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"cpuCoreScheduler" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"cpuCoreAutomation" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_fbs2_State" : {
+"type" : "object",
+"properties" : {
+"state" : {
+"$ref" : "#/definitions/common_scheduler_fbs2_CurrentState"
+}
+},
+"additionalProperties" : false
+},
+"common_scheduler_fbs2_UtilizationThreshold" : {
+"type" : "object",
+"properties" : {
+"warning" : {
+"type" : "integer", "minimum" : 0, "maximum" :255
+},
+"error" : {
+"type" : "integer", "minimum" : 0, "maximum" :255
+}
+},
+"additionalProperties" : false
+}
+},
+"$ref" : "#/definitions/common_scheduler_fbs2_Admin"
+}

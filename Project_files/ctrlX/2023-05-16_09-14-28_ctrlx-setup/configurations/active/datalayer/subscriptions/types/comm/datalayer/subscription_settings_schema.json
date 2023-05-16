@@ -1,0 +1,24 @@
+{
+"$schema": "https://json-schema.org/draft/2019-09/schema",
+"definitions": {
+"comm_datalayer_SubscriptionSettings" : {
+"type" : "object",
+"properties" : {
+"minimumPublishInterval" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"minimumSampleInterval" : {
+"type" : "integer", "minimum" : 0, "maximum" : 18446744073709551615
+},
+"maximumBufferSize" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"minimumErrorInterval" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+}
+},
+"additionalProperties" : false
+}
+},
+"$ref" : "#/definitions/comm_datalayer_SubscriptionSettings"
+}

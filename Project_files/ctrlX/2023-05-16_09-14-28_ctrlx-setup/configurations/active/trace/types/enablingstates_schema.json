@@ -1,0 +1,38 @@
+{
+"$schema": "https://json-schema.org/draft/2019-09/schema",
+"definitions": {
+"common_log_trace_fbs_EnablingState" : {
+"type" : "object",
+"properties" : {
+"unitName" : {
+"type" : "string"
+},
+"messages" : {
+"type" : "boolean"
+},
+"warnings" : {
+"type" : "boolean"
+},
+"errors" : {
+"type" : "boolean"
+}
+},
+"required" : ["unitName"],
+"additionalProperties" : false
+},
+"common_log_trace_fbs_EnablingStates" : {
+"type" : "object",
+"properties" : {
+"enablingStates" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/common_log_trace_fbs_EnablingState"}
+},
+"machineIdentification" : {
+"type" : "string"
+}
+},
+"required" : ["machineIdentification"],
+"additionalProperties" : false
+}
+},
+"$ref" : "#/definitions/common_log_trace_fbs_EnablingStates"
+}

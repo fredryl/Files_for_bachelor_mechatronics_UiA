@@ -1,0 +1,1 @@
+{"ConfiguredAxis":[{"ModelAxisName":"Y","ConnectionType":"datalayerAxes","DatalayerNode":"Axis_Y"},{"ModelAxisName":"X","ConnectionType":"datalayerVariable","DatalayerVariable":"plc/app/Application/sym/GVL/rBallFeedback3D"}],"ToolNodes":{},"TrackId":"3cb73067-6ef7-49ca-adeb-69a88461c5ac","IsDemoModelDeleted":false}

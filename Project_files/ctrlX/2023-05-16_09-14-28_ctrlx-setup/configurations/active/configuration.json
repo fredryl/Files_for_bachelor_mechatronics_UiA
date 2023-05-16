@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.boschrexroth.com/ctrlx-automation/ctrlx-core/solutions/configuration.v1.schema.json",
+  "device": "ctrlx-CORE",
+  "user": "rexroth-setup",
+  "apps": [
+    {
+      "name": "ctrlx-smarthmi-webiq-runtime",
+      "title": "WebIQ Server App (Runtime App)",
+      "version": "2.13.0"
+    },
+    {
+      "name": "rexroth-setup",
+      "title": "Setup",
+      "version": "1.18.1"
+    },
+    {
+      "name": "rexroth-automationcore",
+      "title": "Automation Core",
+      "version": "1.18.1",
+      "appDirectories": [
+        {
+          "name": "datalayer",
+          "description": "Data Layer",
+          "icon": "ctrlx-ic-data-layer",
+          "copyOnLoad": true
+        },
+        {
+          "name": "scheduler",
+          "description": "Scheduler: Tasks, callables and timing settings",
+          "icon": "bosch-ic-cycletime-eighth",
+          "copyOnLoad": true
+        },
+        {
+          "name": "script",
+          "description": "Scripts",
+          "icon": "bosch-ic-document-code-stack",
+          "copyOnLoad": true
+        },
+        {
+          "name": "trace",
+          "description": "Trace: Enabling states - messages, warnings, errors",
+          "icon": "bosch-ic-stethoscope",
+          "copyOnLoad": true
+        }
+      ]
+    },
+    {
+      "name": "rexroth-ethercatmaster",
+      "title": "EtherCAT Master",
+      "version": "1.18.0",
+      "appDirectories": [
+        {
+          "name": "comm.ethercat.master",
+          "description": "EtherCAT master",
+          "icon": "ctrlx-ic-ethercat"
+        }
+      ]
+    },
+    {
+      "name": "rexroth-opcua-server",
+      "title": "OPC UA Server",
+      "version": "1.18.1",
+      "appDirectories": [
+        {
+          "name": "opcuaserver",
+          "description": "OPC UA Server: Endpoint configuration, limit values and certificate configuration",
+          "icon": "ctrlx-ic-opc-ua",
+          "copyOnLoad": true,
+          "writeProtected": true
+        }
+      ]
+    },
+    {
+      "name": "rexroth-plc",
+      "title": "PLC",
+      "version": "1.18.2",
+      "appDirectories": [
+        {
+          "name": "plc",
+          "description": "PLC: Runtime and optional engineering data",
+          "icon": "ctrlx-ic-plc",
+          "copyOnLoad": true,
+          "writeProtected": true
+        },
+        {
+          "name": "plc/run/linux-gcc-x64/data",
+          "copyOnLoad": true
+        },
+        {
+          "name": "plc/run/linux-gcc-aarch64/data",
+          "copyOnLoad": true
+        }
+      ]
+    },
+    {
+      "name": "rexroth-arch01-kernel",
+      "title": "Realtime Kernel",
+      "version": "5.4.221-rt79-ctrlx11"
+    },
+    {
+      "name": "rexroth-motion",
+      "title": "Motion",
+      "version": "1.18.2",
+      "appDirectories": [
+        {
+          "name": "motion",
+          "description": "Motion: Axes and kinematics configuration, coordinate systems and areas",
+          "icon": "ctrlx-ic-motion",
+          "copyOnLoad": true
+        },
+        {
+          "name": "axisprofile",
+          "description": "Motion: Axis profile configuration",
+          "icon": "bosch-ic-directory",
+          "copyOnLoad": true
+        }
+      ]
+    },
+    {
+      "name": "rexroth-3dviewer",
+      "title": "3D Viewer",
+      "version": "1.20.1",
+      "appDirectories": [
+        {
+          "name": "3dviewer",
+          "description": "3D Viewer: Model configuration",
+          "icon": "ctrlx-ic-3d-viewer",
+          "copyOnLoad": true
+        }
+      ]
+    },
+    {
+      "name": "rexroth-solutions",
+      "title": "Solutions",
+      "version": "1.18.1"
+    },
+    {
+      "name": "rexroth-version-guard",
+      "title": "Version Guard",
+      "version": "1.18.0"
+    },
+    {
+      "name": "core20",
+      "version": "20221212"
+    },
+    {
+      "name": "snapd",
+      "version": "2.58"
+    },
+    {
+      "name": "rexroth-deviceadmin",
+      "title": "Device Admin",
+      "version": "1.18.3",
+      "appDirectories": [
+        {
+          "name": "diagnosis",
+          "description": "Diagnosis settings",
+          "icon": "bosch-ic-stethoscope",
+          "copyOnLoad": true
+        }
+      ]
+    },
+    {
+      "name": "rexroth-arch01-hw",
+      "title": "Hardware Support",
+      "version": "1.18.2"
+    }
+  ]
+}

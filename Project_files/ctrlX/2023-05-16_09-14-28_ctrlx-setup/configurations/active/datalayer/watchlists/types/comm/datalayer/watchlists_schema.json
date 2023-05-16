@@ -1,0 +1,27 @@
+{
+"$schema": "https://json-schema.org/draft/2019-09/schema",
+"definitions": {
+"comm_datalayer_Watchlist" : {
+"type" : "object",
+"properties" : {
+"name" : {
+"type" : "string"
+},
+"items" : {
+"type" : "array", "items" : {"type" : "string"}
+}
+},
+"additionalProperties" : false
+},
+"comm_datalayer_Watchlists" : {
+"type" : "object",
+"properties" : {
+"watchlists" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/comm_datalayer_Watchlist"}
+}
+},
+"additionalProperties" : false
+}
+},
+"$ref" : "#/definitions/comm_datalayer_Watchlists"
+}

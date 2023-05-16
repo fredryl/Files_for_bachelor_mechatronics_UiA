@@ -1,0 +1,171 @@
+{
+"$schema": "https://json-schema.org/draft/2019-09/schema",
+"definitions": {
+"motion_core_fbtypes_SafeAreaType" : {
+"type" : "string",
+"enum": ["SAFE_AREA", "WORK_AREA_EXCL", "WORK_AREA_INCL"]
+},
+"motion_core_fbtypes_RTInputsCfg" : {
+"type" : "object",
+"properties" : {
+"doubleArraySize" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"int64ArraySize" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_SysCfg" : {
+"type" : "object",
+"properties" : {
+"pcs" : {
+"$ref" : "#/definitions/motion_core_fbtypes_SysCfgPcsAll"
+},
+"function" : {
+"$ref" : "#/definitions/motion_core_fbtypes_SysCfgFunction"
+},
+"internal" : {
+"$ref" : "#/definitions/motion_core_fbtypes_SysCfgInternal"
+},
+"safeAreas" : {
+"$ref" : "#/definitions/motion_core_fbtypes_SysCfgSafeAreaAll"
+},
+"rtInputs" : {
+"$ref" : "#/definitions/motion_core_fbtypes_RTInputsCfg"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_SysCfgFunction" : {
+"type" : "object",
+"properties" : {
+"ignoreAxisProfiles" : {
+"type" : "boolean"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_SysCfgInternal" : {
+"type" : "object",
+"properties" : {
+"save" : {
+"type" : "boolean"
+},
+"useIpoIVAJ" : {
+"type" : "boolean"
+},
+"timeMeasurement" : {
+"type" : "boolean"
+},
+"driveResetTimeout" : {
+"type" : "number"
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_SysCfgPcsAll" : {
+"type" : "object",
+"properties" : {
+"sets" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/motion_core_fbtypes_SysCfgPcsSet"}
+},
+"groups" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/motion_core_fbtypes_SysCfgPcsGroup"}
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_SysCfgPcsGroup" : {
+"type" : "object",
+"properties" : {
+"groupName" : {
+"type" : "string"
+},
+"sets" : {
+"type" : "array", "items" : {"type" : "string"}
+}
+},
+"required" : ["groupName"],
+"additionalProperties" : false
+},
+"motion_core_fbtypes_SysCfgPcsSet" : {
+"type" : "object",
+"properties" : {
+"setName" : {
+"type" : "string"
+},
+"offsetXYZ" : {
+"type" : "array", "items" : {"type" : "number"}
+},
+"orientation" : {
+"type" : "array", "items" : {"type" : "number"}
+},
+"offsetAux" : {
+"type" : "array", "items" : {"type" : "number"}
+},
+"relativeToPCS" : {
+"type" : "boolean"
+},
+"offsetXYZUnits" : {
+"type" : "array", "items" : {"type" : "string"}
+},
+"orientationUnits" : {
+"type" : "array", "items" : {"type" : "string"}
+},
+"offsetAuxUnits" : {
+"type" : "array", "items" : {"type" : "string"}
+}
+},
+"required" : ["setName"],
+"additionalProperties" : false
+},
+"motion_core_fbtypes_SysCfgSafeArea" : {
+"type" : "object",
+"properties" : {
+"name" : {
+"type" : "string"
+},
+"coordSystem" : {
+"type" : "string"
+},
+"type" : {
+"$ref" : "#/definitions/motion_core_fbtypes_SafeAreaType"
+},
+"box" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/motion_core_fbtypes_SysCfgSafeAreaBox"}
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_SysCfgSafeAreaAll" : {
+"type" : "object",
+"properties" : {
+"safeAreas" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/motion_core_fbtypes_SysCfgSafeArea"}
+}
+},
+"additionalProperties" : false
+},
+"motion_core_fbtypes_SysCfgSafeAreaBox" : {
+"type" : "object",
+"properties" : {
+"min" : {
+"type" : "number"
+},
+"max" : {
+"type" : "number"
+},
+"unit" : {
+"type" : "string"
+},
+"active" : {
+"type" : "boolean"
+}
+},
+"additionalProperties" : false
+}
+},
+"$ref" : "#/definitions/motion_core_fbtypes_SysCfg"
+}

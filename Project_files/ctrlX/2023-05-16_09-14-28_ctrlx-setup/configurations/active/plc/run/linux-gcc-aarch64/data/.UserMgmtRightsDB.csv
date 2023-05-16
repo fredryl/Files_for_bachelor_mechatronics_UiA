@@ -1,0 +1,31 @@
+#Object,GroupRights(group=,rights=,deniedrights=)
+<object name="/"/>,<group name="plc" rights=0xffffffff deniedrights=0x00000000/>
+<object name="/_cnc"/>
+<object name="/visu"/>
+<object name="/PlcLogic"/>
+<object name="/$cert$"/>
+<object name="/$cert$/import"/>
+<object name="/$cert$/export"/>
+<object name="Device"/>,<group name="plc" rights=0xffffffff deniedrights=0x00000000/>
+<object name="Device.PlcLogic"/>,<group name="plc" rights=0xffffffff deniedrights=0x00000000/>
+<object name="Device.PlcLogic.__Backup&Restore"/>,<group name="plc" rights=0xffffffff deniedrights=0x00000000/>
+<object name="Device.Logger"/>,<group name="plc" rights=0xffffffff deniedrights=0x00000000/>
+<object name="Device.Settings"/>,<group name="plc" rights=0xffffffff deniedrights=0x00000000/>
+<object name="Device.UserManagement"/>,<group name="plc" rights=0xffffffff deniedrights=0x00000000/>
+<object name="Device.UserManagement.Groups"/>
+<object name="Device.UserManagement.Users"/>
+<object name="Device.UserManagement.Access Rights"/>
+<object name="Device.PlcShell"/>,<group name="plc" rights=0xffffffff deniedrights=0x00000000/>
+<object name="Device.X509"/>,<group name="plc" rights=0xffffffff deniedrights=0x00000000/>
+<object name="Device.X509.ImportCertificate"/>
+<object name="Device.X509.ExportCertificate"/>
+<object name="Device.X509.DeleteCertificate"/>
+<object name="Device.X509.MoveCertificate"/>
+<object name="Device.X509.ListCertificates"/>
+<object name="Device.X509.ListUseCases"/>
+<object name="Device.X509.CreateSelfSignedCertificate"/>
+<object name="Device.X509.CreateCertificateSigningRequest"/>
+<object name="Device.X509.GetStatus"/>
+<object name="Device.X509.ImportPkcs12Keystore"/>
+<object name="Device.X509.ExportPkcs12Keystore"/>
+<object name="Device.CodeMeter"/>

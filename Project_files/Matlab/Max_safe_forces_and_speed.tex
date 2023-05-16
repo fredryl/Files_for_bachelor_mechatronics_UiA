@@ -1,0 +1,142 @@
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and export to LaTeX again.
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{epstopdf}
+\usepackage[table]{xcolor}
+\usepackage{matlab}
+
+\sloppy
+\epstopdfsetup{outdir=./}
+\graphicspath{ {./Max_safe_forces_and_speed_images/} }
+
+\begin{document}
+
+\begin{par}
+\begin{flushleft}
+Here, maximum speed and power must be calculated on the body part with the lowest tolerance for injury/pain. Based on ISO 15066-2016
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+clc; close all; clear;
+%  defenition of variable:
+Beam_weigth = 0.39630912 % Kg, only beam. No ball.
+\end{matlabcode}
+\begin{matlaboutput}
+Beam_weigth = 0.3963
+\end{matlaboutput}
+\begin{matlabcode}
+Ball_weigth = 0.00283 % kg, Only the ball.
+\end{matlabcode}
+\begin{matlaboutput}
+Ball_weigth = 0.0028
+\end{matlaboutput}
+\begin{matlabcode}
+weigth_beam_with_ball = Beam_weigth+Ball_weigth % Kg, need to be corrected, but beam now without sensors 2.83g
+\end{matlabcode}
+\begin{matlaboutput}
+weigth_beam_with_ball = 0.3991
+\end{matlaboutput}
+\begin{matlabcode}
+beam_lengt_from_center =  0.4216 % m, Distance from center to the farest from sensor (bending moment).
+\end{matlabcode}
+\begin{matlaboutput}
+beam_lengt_from_center = 0.4216
+\end{matlaboutput}
+\begin{matlabcode}
+
+\end{matlabcode}
+
+
+\matlabheading{Energy limit values based on the body region model.}
+
+\begin{matlabcode}
+max_juele_face = 0.11 % juele, Nm. page 28, tabel A.4. 
+\end{matlabcode}
+\begin{matlaboutput}
+max_juele_face = 0.1100
+\end{matlaboutput}
+
+
+\matlabheading{Biomechanical limits}
+
+\begin{matlabcode}
+Maximum_permissible_force = 65 % N, Face masticatory muscle. Tabel A.2 page 24.
+\end{matlabcode}
+\begin{matlaboutput}
+Maximum_permissible_force = 65
+\end{matlaboutput}
+\begin{matlabcode}
+
+mass_Head = 4.4 % kg, page 27, tabel A.3.
+\end{matlabcode}
+\begin{matlaboutput}
+mass_Head = 4.4000
+\end{matlaboutput}
+\begin{matlabcode}
+m_ball = 0.00283 % kg
+\end{matlabcode}
+\begin{matlaboutput}
+m_ball = 0.0028
+\end{matlaboutput}
+\begin{matlabcode}
+
+
+% finding max velocity relativ to hiting the object.
+m_R = (Beam_weigth/2+m_ball) % kg, formula A.4 page 29.
+\end{matlabcode}
+\begin{matlaboutput}
+m_R = 0.2010
+\end{matlaboutput}
+\begin{matlabcode}
+my = (1/mass_Head+1/m_R)^-1 % kg, formula A.3 page 29.
+\end{matlabcode}
+\begin{matlaboutput}
+my = 0.1922
+\end{matlaboutput}
+\begin{matlabcode}
+
+
+V_relativ_m = sqrt((max_juele_face*2)/my) % m/s max velocity of the end of beam tip. formula A.2 page 28.
+\end{matlabcode}
+\begin{matlaboutput}
+V_relativ_m = 1.0699
+\end{matlaboutput}
+\begin{matlabcode}
+V_relativ_mm = V_relativ_m*10^3 % mm/s
+\end{matlabcode}
+\begin{matlaboutput}
+V_relativ_mm = 1.0699e+03
+\end{matlaboutput}
+\begin{matlabcode}
+omega = V_relativ_m/(beam_lengt_from_center) % Rad/s 
+\end{matlabcode}
+\begin{matlaboutput}
+omega = 2.5376
+\end{matlaboutput}
+\begin{matlabcode}
+
+
+% finding the max safe torque of from servo
+safe_t_off = Maximum_permissible_force*beam_lengt_from_center % Nm 
+\end{matlabcode}
+\begin{matlaboutput}
+safe_t_off = 27.4040
+\end{matlaboutput}
+\begin{matlabcode}
+
+
+
+\end{matlabcode}
+
+\end{document}

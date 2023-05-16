@@ -1,0 +1,250 @@
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and export to LaTeX again.
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{epstopdf}
+\usepackage[table]{xcolor}
+\usepackage{matlab}
+
+\sloppy
+\epstopdfsetup{outdir=./}
+\graphicspath{ {./Ball_i_aks_nedover_max_aks_images/} }
+
+\begin{document}
+
+\begin{par}
+\begin{flushleft}
+Here I want to find the maximum angular acceleration of the ball downwards in the worst case scenario. This is to set a limit in the system to make sure we work within a safe limitation.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Not considering folowing: air resistance and rolling resistance.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Assume: No sliding ogly pure roll and no friction do to rooling.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Angle $\pm {20}^{\circ }$, working in area of 40 deg.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Picture on the force acting:
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+\includegraphics[width=\maxwidth{8.228800802809834em}]{image_0}
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+clc;close all; clear;
+% defenition of variable:
+m = 2.75 % grams
+\end{matlabcode}
+\begin{matlaboutput}
+m = 2.7500
+\end{matlaboutput}
+\begin{matlabcode}
+g = 9.81 % m/s^2
+\end{matlabcode}
+\begin{matlaboutput}
+g = 9.8100
+\end{matlaboutput}
+\begin{matlabcode}
+Length_of_beam = 0.71 % m
+\end{matlabcode}
+\begin{matlaboutput}
+Length_of_beam = 0.7100
+\end{matlaboutput}
+\begin{matlabcode}
+max_length_from_center = 0.3351 % m,The furthest distance from the center the ball can travel
+\end{matlabcode}
+\begin{matlaboutput}
+max_length_from_center = 0.3351
+\end{matlaboutput}
+\begin{matlabcode}
+
+
+
+% The worst cenario is when the ball is at the tip and the beam is
+% accselerating down from horizontal.
+a_max_tip = 9.81 % m/s^2
+\end{matlabcode}
+\begin{matlaboutput}
+a_max_tip = 9.8100
+\end{matlaboutput}
+\begin{matlabcode}
+
+% % finding max angular acceleration from top 20 deg going down:
+g_20_down = cosd(20)*a_max_tip
+\end{matlabcode}
+\begin{matlaboutput}
+g_20_down = 9.2184
+\end{matlaboutput}
+\begin{matlabcode}
+alpha_20_down =  g_20_down/max_length_from_center% rad/s^2
+\end{matlabcode}
+\begin{matlaboutput}
+alpha_20_down = 27.5094
+\end{matlaboutput}
+\begin{matlabcode}
+
+
+% finding max angular acceleration from horizontal going down:
+alpha_0_down =  a_max_tip/max_length_from_center% rad/s^2
+\end{matlabcode}
+\begin{matlaboutput}
+alpha_0_down = 29.2748
+\end{matlaboutput}
+\begin{matlabcode}
+
+% alpha max base on worsat serario at the top:
+alpha_max =  g_20_down/max_length_from_center% rad/s^2
+\end{matlabcode}
+\begin{matlaboutput}
+alpha_max = 27.5094
+\end{matlaboutput}
+\begin{matlabcode}
+
+\end{matlabcode}
+
+\begin{par}
+\begin{flushleft}
+The angular acceleration can not exid 29.2748$\frac{rad}{s^2 }$ when the ball have a negativ acceleration horizontal going down. If so the ball will be in free fall and no contact.
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+The angular acceleration can not exid 27.5094$\frac{rad}{s^2 }$ when the ball have a negativ acceleration at 20 deg at top going down. If so the ball will be in free fall and no contact.
+\end{flushleft}
+\end{par}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Now we need to consider  that we dont want the ball to leave the beam at the tip.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+First plot the vertical acceleration  $\pm {20}^{\circ }$:
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+angle = linspace(-20,20,400);
+rad = deg2rad(angle);
+angle_rad = (cos(rad));
+vertica_acceleration = (alpha_max*max_length_from_center)./angle_rad;
+plot(angle,vertica_acceleration)
+xlabel('angel')
+ylabel('vertical acceleration')
+\end{matlabcode}
+\begin{center}
+\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_0.eps}
+\end{center}
+
+\begin{par}
+\begin{flushleft}
+This means that if the ball stops at 20 then the accel is 9.21838 $\frac{m}{s^2 }$ vertical 
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+Finds the length of the arc it accelerates
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+arc_deg =linspace(0,2*pi/9,400); % Going from -20 deg to 20 deg.
+arc_lengt_1 = max_length_from_center*arc_deg; % m lengt from -20 to 20 deg
+\end{matlabcode}
+
+\begin{par}
+\begin{flushleft}
+Finding the speed at the end vertically.
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+theta = arc_deg ; % -20 to 20 deg
+t = sqrt((2*theta)/alpha_max); % s, time from -20 deg to 20 deg. 
+omega_30 = alpha_max*t; % rot velocity from -20 to 20 deg over the arc lengt.
+velocity_tang = omega_30*max_length_from_center; % m/s, tangential velosyty if alpha is constant and from min angel to max angel.
+
+plot(theta,velocity_tang)
+xlabel('Lengt of travell rad')
+ylabel('Velocity m/s')
+\end{matlabcode}
+\begin{center}
+\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_1.eps}
+\end{center}
+
+\begin{par}
+\begin{flushleft}
+Finding how high the ball will go if the speed and acceleration is known. Stops at 20 deg at top after travel -20 to 20 deg..
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+%h = 1/100 %m
+% energi_potensiell = m*g*h
+% from -20 deg  stops at 20deg how high and fare will the ball go.
+% This is only to show if the system have limits unvanted senarios can
+% happen.
+h_max =((velocity_tang).^2.*(sind(20)).^2)/(2*g) *10^3 % mm in the air
+\end{matlabcode}
+\begin{matlaboutput}
+h_max = 1x400    
+         0    0.0645    0.1289    0.1934    0.2578    0.3223    0.3867    0.4512    0.5156    0.5801    0.6445    0.7090    0.7734    0.8379    0.9023    0.9668    1.0312    1.0957    1.1601    1.2246    1.2890    1.3535    1.4179    1.4824    1.5468    1.6113    1.6757    1.7402    1.8046    1.8691    1.9335    1.9980    2.0624    2.1269    2.1913    2.2558    2.3202    2.3847    2.4491    2.5136    2.5780    2.6425    2.7069    2.7714    2.8358    2.9003    2.9647    3.0292    3.0936    3.1581
+
+\end{matlaboutput}
+\begin{matlabcode}
+R_max =((velocity_tang).^2.*(sind(2*20)))/(g) *10^3 % mm in the air
+\end{matlabcode}
+\begin{matlaboutput}
+R_max = 1x400    
+         0    0.7083    1.4166    2.1249    2.8332    3.5415    4.2498    4.9582    5.6665    6.3748    7.0831    7.7914    8.4997    9.2080    9.9163   10.6246   11.3329   12.0412   12.7495   13.4579   14.1662   14.8745   15.5828   16.2911   16.9994   17.7077   18.4160   19.1243   19.8326   20.5409   21.2492   21.9576   22.6659   23.3742   24.0825   24.7908   25.4991   26.2074   26.9157   27.6240   28.3323   29.0406   29.7489   30.4572   31.1656   31.8739   32.5822   33.2905   33.9988   34.7071
+
+\end{matlaboutput}
+\begin{matlabcode}
+plot(velocity_tang,h_max)
+hold on
+plot(velocity_tang,R_max)
+grid on
+xlabel('velocity m/s')
+ylabel('Ball will go up (h) and away(R) if stoped, mm')
+legend('Ball can go vertically','Ball can go horizontally', 'Location','best')
+\end{matlabcode}
+\begin{center}
+\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_2.eps}
+\end{center}
+
+\end{document}

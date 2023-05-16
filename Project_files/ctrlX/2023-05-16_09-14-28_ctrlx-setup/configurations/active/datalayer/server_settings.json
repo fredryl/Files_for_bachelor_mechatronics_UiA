@@ -1,0 +1,11 @@
+{
+    "$persistence_header": {
+        "bfbs": "./bfbs/types/datalayer/server-settings.bfbs",
+        "version": "0.0.2"
+    },
+    "$schema": "./types/types/datalayer/server-settings_schema.json",
+    "serverIdlePingTimeout": 30000,
+    "serverMaxMessageSize": 52428800,
+    "serverMaxRtSize": 1048576,
+    "serverWaitResponseTimeout": 3000
+}

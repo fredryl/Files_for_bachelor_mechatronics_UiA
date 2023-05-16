@@ -1,0 +1,497 @@
+{
+  "$name": "",
+  "$schema": "./setup.v1.schema.json",
+  "$version": "",
+  "certificateManagement": {
+    "applications": {
+      "datalayer": {
+        "certificates": {},
+        "keys": {}
+      },
+      "networksecurity": {
+        "certificates": {},
+        "keys": {}
+      },
+      "permanent": {
+        "certificates": {
+          "7260416704826": {
+            "devicePortalDeviceCert_undeletable.pem": {
+              "$path": "certificateManagement/applications/permanent/certificates/7260416704826/devicePortalDeviceCert_undeletable.pem"
+            }
+          }
+        },
+        "keys": {
+          "7260416704826": {
+            "devicePortalDeviceKey_undeletable.pem": {
+              "$path": "certificateManagement/applications/permanent/keys/7260416704826/devicePortalDeviceKey_undeletable.pem"
+            },
+            "srk_pub.pem": {
+              "$path": "certificateManagement/applications/permanent/keys/7260416704826/srk_pub.pem"
+            }
+          }
+        }
+      },
+      "rexroth-opcua-server": {
+        "certificates": {
+          "7260416704826": {
+            "rexroth-opcua-server2048.der": {
+              "$path": "certificateManagement/applications/rexroth-opcua-server/certificates/7260416704826/rexroth-opcua-server2048.der"
+            },
+            "rexroth-opcua-server2048_sha1.der": {
+              "$path": "certificateManagement/applications/rexroth-opcua-server/certificates/7260416704826/rexroth-opcua-server2048_sha1.der"
+            }
+          },
+          "trusted": {
+            "FA70F187EC5B710A7AF4907622449F8E9413CD9A.der": {
+              "$path": "certificateManagement/applications/rexroth-opcua-server/certificates/trusted/FA70F187EC5B710A7AF4907622449F8E9413CD9A.der"
+            }
+          }
+        },
+        "keys": {
+          "7260416704826": {
+            "rexroth-opcua-server2048.key": {
+              "$path": "certificateManagement/applications/rexroth-opcua-server/keys/7260416704826/rexroth-opcua-server2048.key.pem"
+            },
+            "rexroth-opcua-server2048_sha1.key": {
+              "$path": "certificateManagement/applications/rexroth-opcua-server/keys/7260416704826/rexroth-opcua-server2048_sha1.key.pem"
+            }
+          }
+        }
+      },
+      "rexroth-setup": {
+        "certificates": {},
+        "keys": {}
+      },
+      "ssh": {
+        "certificates": {},
+        "keys": {
+          "7260416704826": {
+            "ssh_host_ecdsa_key": {
+              "$path": "certificateManagement/applications/ssh/keys/7260416704826/ssh_host_ecdsa_key.pem"
+            },
+            "ssh_host_ed25519_key": {
+              "$path": "certificateManagement/applications/ssh/keys/7260416704826/ssh_host_ed25519_key.pem"
+            },
+            "ssh_host_rsa_key": {
+              "$path": "certificateManagement/applications/ssh/keys/7260416704826/ssh_host_rsa_key.pem"
+            }
+          }
+        }
+      },
+      "webserver": {
+        "certificates": {
+          "7260416704826": {
+            "webserver_cert.pem": {
+              "$path": "certificateManagement/applications/webserver/certificates/7260416704826/webserver_cert.pem"
+            },
+            "webserver_custom_cert.pem": {
+              "$path": "certificateManagement/applications/webserver/certificates/7260416704826/webserver_custom_cert.pem"
+            }
+          }
+        },
+        "keys": {
+          "7260416704826": {
+            "token_validation_key.pem": {
+              "$path": "certificateManagement/applications/webserver/keys/7260416704826/token_validation_key.pem"
+            },
+            "token_validation_pubkey.pem": {
+              "$path": "certificateManagement/applications/webserver/keys/7260416704826/token_validation_pubkey.pem"
+            },
+            "webserver_custom_key.pem": {
+              "$path": "certificateManagement/applications/webserver/keys/7260416704826/webserver_custom_key.pem"
+            },
+            "webserver_key.pem": {
+              "$path": "certificateManagement/applications/webserver/keys/7260416704826/webserver_key.pem"
+            }
+          }
+        }
+      }
+    }
+  },
+  "configurations": {
+    "active": {
+      "$path": "/configurations/active"
+    },
+    "archive": {
+      "backup210323": {}
+    }
+  },
+  "connectivity": {
+    "discoveryServices": {
+      "llmnr": {
+        "enabled": true
+      },
+      "mdns": {
+        "enabled": true
+      },
+      "upnp": {
+        "enabled": true
+      }
+    },
+    "ethernet": {
+      "XF10": {
+        "dhcp": {
+          "clientIdentifier": "rfc4361"
+        },
+        "enabled": true,
+        "ipForwardingEnabled": true,
+        "ipv4": {
+          "addresses": [
+            "192.168.1.1/24"
+          ],
+          "dhcpEnabled": true,
+          "dnsServers": [],
+          "gateway": "",
+          "linkLocal": {
+            "enabled": false
+          }
+        },
+        "ipv6": {
+          "addresses": [],
+          "dhcpEnabled": true,
+          "dnsServers": [],
+          "gateway": ""
+        },
+        "routing": {
+          "routes": []
+        },
+        "security": null,
+        "useExternalSettings": false
+      },
+      "XF51": {
+        "dhcp": {
+          "clientIdentifier": "rfc4361"
+        },
+        "enabled": true,
+        "ipForwardingEnabled": true,
+        "ipv4": {
+          "addresses": [],
+          "dhcpEnabled": true,
+          "dnsServers": [],
+          "gateway": "",
+          "linkLocal": {
+            "enabled": false
+          }
+        },
+        "ipv6": {
+          "addresses": [],
+          "dhcpEnabled": true,
+          "dnsServers": [],
+          "gateway": ""
+        },
+        "routing": {
+          "routes": []
+        },
+        "security": null,
+        "useExternalSettings": false
+      },
+      "eoe0": {
+        "dhcp": {
+          "clientIdentifier": "rfc4361"
+        },
+        "enabled": true,
+        "ipForwardingEnabled": true,
+        "ipv4": {
+          "addresses": [],
+          "dhcpEnabled": false,
+          "dnsServers": [],
+          "gateway": "",
+          "linkLocal": {
+            "enabled": false
+          }
+        },
+        "ipv6": {
+          "addresses": [],
+          "dhcpEnabled": false,
+          "dnsServers": [],
+          "gateway": ""
+        },
+        "routing": {
+          "routes": []
+        },
+        "security": null,
+        "useExternalSettings": true
+      }
+    }
+  },
+  "dateTime": {
+    "ntpServers": [],
+    "timeSynchronization": false,
+    "timezone": "Europe/Oslo"
+  },
+  "hosts": [
+    {
+      "address": "127.0.0.1",
+      "hostname": "localhost"
+    },
+    {
+      "address": "::1",
+      "aliases": [
+        "ip6-loopback"
+      ],
+      "hostname": "ip6-localhost"
+    },
+    {
+      "address": "ff02::1",
+      "hostname": "ip6-allnodes"
+    },
+    {
+      "address": "ff02::2",
+      "hostname": "ip6-allrouters"
+    }
+  ],
+  "identityManagement": {
+    "easyServiceAccess": false,
+    "groups": {
+      "sshuser": {}
+    },
+    "ldapConfiguration": {
+      "baseDN": "dc=example,dc=org",
+      "groupFilter": "(objectClass=group)",
+      "groupMembershipAttribute": "",
+      "host": "192.168.1.100",
+      "port": "389",
+      "readOnlyUser": "",
+      "readOnlyUserPassword": "",
+      "serverType": "ActiveDirectory",
+      "skipServerCertificateVerification": false,
+      "useTLS": false,
+      "userFilter": "(objectClass=user)",
+      "usernameAttribute": ""
+    },
+    "loginBanner": "",
+    "passwordPolicies": {
+      "enforcePasswordHistory": 5,
+      "minimumLowercaseChars": 1,
+      "minimumNumericChars": 1,
+      "minimumPasswordLength": 12,
+      "minimumSpecialChars": 0,
+      "minimumUppercaseChars": 1,
+      "mustNotContainUsername": true,
+      "passwordExpiration": 0
+    },
+    "radiusConfiguration": {
+      "authProtocol": "ms-chapv2",
+      "groupsVSA": 0,
+      "ip": "",
+      "port": "1812",
+      "protocol": "udp",
+      "secret": "",
+      "vendorId": 0
+    },
+    "remoteAuthConfig": {
+      "enabled": false,
+      "service": ""
+    },
+    "sessionPolicies": {
+      "failedLoginTimeout": 300,
+      "maxLoginAttempts": 0,
+      "maxSessionsPerUser": 0,
+      "sessionInactiveTimeout": 0,
+      "sessionTimeout": 28800
+    },
+    "users": {
+      "boschrexroth": {
+        "enabled": true,
+        "forcePasswordChange": false,
+        "permissions": [
+          "rexroth-device.all.rwx"
+        ],
+        "sessionPolicies": {
+          "failedLoginTimeout": 300,
+          "maxLoginAttempts": 0,
+          "maxSessionsPerUser": 0,
+          "sessionInactiveTimeout": 0,
+          "sessionTimeout": 28800
+        },
+        "useGlobalSessionPolicies": true
+      }
+    }
+  },
+  "licenseManagement": {
+    "capabilities": [
+      {
+        "count": 1,
+        "finalExpirationDate": "",
+        "isPermanent": true,
+        "name": "SWL-W-XCx-WIQxxRUDx150xxx-NNNN",
+        "startDate": "0001-01-01T00:00:00Z",
+        "version": "1.0"
+      },
+      {
+        "count": 1,
+        "finalExpirationDate": "",
+        "isPermanent": true,
+        "name": "SWL-XCx-3DV-3DVIEWERxxxxx-NNNN",
+        "startDate": "0001-01-01T00:00:00Z",
+        "version": "1.0"
+      },
+      {
+        "count": 1,
+        "finalExpirationDate": "",
+        "isPermanent": true,
+        "name": "SWL-XCx-ECM-ETHERCATMASxx-BANN",
+        "startDate": "0001-01-01T00:00:00Z",
+        "version": "1.0"
+      },
+      {
+        "count": 1,
+        "finalExpirationDate": "",
+        "isPermanent": true,
+        "name": "SWL-XCx-MOT-STDMOTIONxxxx-NNNN",
+        "startDate": "0001-01-01T00:00:00Z",
+        "version": "1.0"
+      },
+      {
+        "count": 1,
+        "finalExpirationDate": "",
+        "isPermanent": true,
+        "name": "SWL-XCx-PLC-PLCxxxxxxxxxx-BANN",
+        "startDate": "0001-01-01T00:00:00Z",
+        "version": "1.0"
+      },
+      {
+        "count": 1,
+        "finalExpirationDate": "",
+        "isPermanent": true,
+        "name": "SWL-XCx-PLC-PLCxxxxxxxxxx-NNNN",
+        "startDate": "0001-01-01T00:00:00Z",
+        "version": "1.0"
+      },
+      {
+        "count": 1,
+        "finalExpirationDate": "",
+        "isPermanent": true,
+        "name": "SWL-XCx-PYR-PYTHONRUNTIME-NNNN",
+        "startDate": "0001-01-01T00:00:00Z",
+        "version": "1.0"
+      },
+      {
+        "count": 1,
+        "finalExpirationDate": "",
+        "isPermanent": true,
+        "name": "SWL-XCx-UAS-OPCUASERVERxx-NNNN",
+        "startDate": "0001-01-01T00:00:00Z",
+        "version": "1.0"
+      }
+    ]
+  },
+  "packageManagement": {
+    "installedApps": {
+      "core20": {
+        "enabled": true,
+        "version": "20221212"
+      },
+      "ctrlx-smarthmi-webiq-runtime": {
+        "$path": "/packageManagement/installedApps/ctrlx-smarthmi-webiq-runtime-2.13.0.app",
+        "enabled": true,
+        "version": "2.13.0"
+      },
+      "rexroth-3dviewer": {
+        "$path": "/packageManagement/installedApps/rexroth-3dviewer-1.20.1.app",
+        "enabled": true,
+        "version": "1.20.1"
+      },
+      "rexroth-arch01-hw": {
+        "enabled": true,
+        "version": "1.18.2"
+      },
+      "rexroth-arch01-kernel": {
+        "enabled": true,
+        "version": "5.4.221-rt79-ctrlx11"
+      },
+      "rexroth-automationcore": {
+        "$path": "/packageManagement/installedApps/rexroth-automationcore-1.18.1.app",
+        "enabled": true,
+        "version": "1.18.1"
+      },
+      "rexroth-deviceadmin": {
+        "$path": "/packageManagement/installedApps/rexroth-deviceadmin-1.18.3.app",
+        "enabled": true,
+        "version": "1.18.3"
+      },
+      "rexroth-ethercatmaster": {
+        "$path": "/packageManagement/installedApps/rexroth-ethercatmaster-1.18.0.app",
+        "enabled": true,
+        "version": "1.18.0"
+      },
+      "rexroth-motion": {
+        "$path": "/packageManagement/installedApps/rexroth-motion-1.18.2.app",
+        "enabled": true,
+        "version": "1.18.2"
+      },
+      "rexroth-opcua-server": {
+        "$path": "/packageManagement/installedApps/rexroth-opcua-server-1.18.1.app",
+        "enabled": true,
+        "version": "1.18.1"
+      },
+      "rexroth-plc": {
+        "$path": "/packageManagement/installedApps/rexroth-plc-1.18.2.app",
+        "enabled": true,
+        "version": "1.18.2"
+      },
+      "rexroth-setup": {
+        "$path": "/packageManagement/installedApps/rexroth-setup-1.18.1.app",
+        "enabled": true,
+        "version": "1.18.1"
+      },
+      "rexroth-solutions": {
+        "$path": "/packageManagement/installedApps/rexroth-solutions-1.18.1.app",
+        "enabled": true,
+        "version": "1.18.1"
+      },
+      "rexroth-version-guard": {
+        "$path": "/packageManagement/installedApps/rexroth-version-guard-1.18.0.app",
+        "enabled": true,
+        "version": "1.18.0"
+      },
+      "snapd": {
+        "enabled": true,
+        "version": "2.58"
+      }
+    }
+  },
+  "proxy": {
+    "enabled": false,
+    "http": {
+      "authentication": false,
+      "url": "",
+      "username": ""
+    },
+    "https": {
+      "authentication": false,
+      "url": "",
+      "username": ""
+    },
+    "noProxy": ""
+  },
+  "ssh": {
+    "banner": "",
+    "clientAliveInterval": 0,
+    "enabled": false,
+    "maxAuthTries": 6,
+    "maxSessions": 10,
+    "maxStartups": 10
+  },
+  "system": {
+    "hostname": "ctrlx-CORE",
+    "theming": {
+      "app": "rexroth-deviceadmin",
+      "theme": "default"
+    }
+  },
+  "systemInfo": {
+    "architecture": "arm64",
+    "macAddress": "00:60:34:8a:33:9c",
+    "operatingSystem": "Ubuntu Core 20",
+    "osVersion": "20"
+  },
+  "typePlate": {
+    "materialIndex": "AA1",
+    "serialNumber": "7260416704826",
+    "storeBrandId": "boschrexroth",
+    "storeModelId": "rexroth-arch01",
+    "storeSerialId": "7260416704826",
+    "typeCode": "LK CX-CPU01-07-SMT-RJ45"
+  }
+}

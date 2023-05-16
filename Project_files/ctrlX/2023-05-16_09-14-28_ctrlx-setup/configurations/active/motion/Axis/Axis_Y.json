@@ -1,0 +1,98 @@
+{
+    "$persistence_header": {
+        "bfbs": "./bfbs/cfg.bfbs",
+        "version": "0.0.2"
+    },
+    "$schema": "./types/cfg_schema.json",
+    "axisProfileName": "Profile_1",
+    "devErrReaction": {
+        "estopSettings": {
+            "estopToDevCriticalErr": "ESTOP_AXIS_LIMIT",
+            "estopToDevFatalErr": "ESTOP_AXIS_LIMIT",
+            "estopToDevLightErr": "ESTOP_AXIS_LIMIT",
+            "estopToFieldbusErr": "ESTOP_AXIS_LIMIT",
+            "estopToNoDevErr": "ESTOP_AXIS_LIMIT",
+            "estopToNoDeviceInfo": "ESTOP_AXIS_LIMIT"
+        },
+        "userEstopLim": {
+            "dec": 0.03490658504,
+            "decUnit": "rad/s^2",
+            "jrkDec": 0.0,
+            "jrkDecUnit": "rad/s^3"
+        }
+    },
+    "functions": {
+        "coupling": {
+            "gantry": {
+                "isMember": false,
+                "moveAllowed": false,
+                "multiBrakeDyn": false
+            }
+        }
+    },
+    "kinProperties": {
+        "accReserve": 0.0,
+        "jrkReserve": 0.0
+    },
+    "limits": {
+        "acc": 15.0,
+        "accUnit": "rad/s^2",
+        "dec": 15.0,
+        "decUnit": "rad/s^2",
+        "jrkAcc": 0.0,
+        "jrkAccUnit": "rad/s^3",
+        "jrkDec": 0.0,
+        "jrkDecUnit": "rad/s^3",
+        "posMax": 20.0,
+        "posMaxUnit": "deg",
+        "posMin": -20.0,
+        "posMinUnit": "deg",
+        "velNeg": 500.0,
+        "velNegUnit": "rpm",
+        "velPos": 500.0,
+        "velPosUnit": "rpm"
+    },
+    "objectType": "Axis",
+    "properties": {
+        "axsType": "ROTATIONAL",
+        "modulo": false,
+        "moduloValue": 360.0,
+        "moduloValueUnit": "deg"
+    },
+    "rtInputs": {
+        "doubleArraySize": 5,
+        "int64ArraySize": 0
+    },
+    "units": {
+        "default": [
+            {
+                "abbreviation": "deg",
+                "valueType": "position+length"
+            },
+            {
+                "abbreviation": "rpm",
+                "valueType": "velocity"
+            },
+            {
+                "abbreviation": "rad/s^2",
+                "valueType": "acceleration"
+            },
+            {
+                "abbreviation": "rad/s^3",
+                "valueType": "jerk"
+            },
+            {
+                "abbreviation": "N",
+                "valueType": "force"
+            },
+            {
+                "abbreviation": "Nm",
+                "valueType": "torque"
+            },
+            {
+                "abbreviation": "s",
+                "valueType": "time"
+            }
+        ]
+    }
+}

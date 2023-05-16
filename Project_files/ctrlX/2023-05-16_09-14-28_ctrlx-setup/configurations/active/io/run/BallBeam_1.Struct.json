@@ -1,0 +1,41 @@
+{
+  "Name": "ctrlx_CORE",
+  "IconName": null,
+  "EcadId": "",
+  "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+  "Type": 4096,
+  "Id": "1001 0090",
+  "ModuleId": null,
+  "Version": "1.18.0.0",
+  "ObjectGuid": "7bcd6b92-453d-4e02-bf17-40de386b5b80",
+  "SlotIndex": 0,
+  "StructuralItems": [
+    {
+      "Name": "ethercatmaster",
+      "IconName": null,
+      "EcadId": null,
+      "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+      "Type": 64,
+      "Id": "1001 0101",
+      "ModuleId": null,
+      "Version": "1.18.0.0",
+      "ObjectGuid": "22dbb33d-8eba-4f39-ae38-aa7ff2b49c96",
+      "SlotIndex": 0,
+      "StructuralItems": [
+        {
+          "Name": "ctrlX_DRIVE_XMS_SoE_",
+          "IconName": null,
+          "EcadId": null,
+          "TypeName": "_3S.CoDeSys.DeviceObject.DeviceObject",
+          "Type": 65,
+          "Id": "24_2000411100000003",
+          "ModuleId": null,
+          "Version": "Revision=16#00000003",
+          "ObjectGuid": "a795e6f4-93d5-434e-bfdf-f449b3886616",
+          "SlotIndex": 0,
+          "StructuralItems": []
+        }
+      ]
+    }
+  ]
+}

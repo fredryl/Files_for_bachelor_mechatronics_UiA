@@ -1,0 +1,128 @@
+{
+"$schema": "https://json-schema.org/draft/2019-09/schema",
+"definitions": {
+"comm_axisprofile_fbtypes_ProfileType" : {
+"type" : "string",
+"enum": ["Unknown", "Servodrive_over_Ethercat", "CANopen_over_Ethercat"]
+},
+"comm_axisprofile_fbtypes_ScalingStrategy" : {
+"type" : "string",
+"enum": ["UNKNOWN", "SOE_STANDARD", "COE_CALC_DRIVE", "COE_CALC_CONTROL"]
+},
+"comm_axisprofile_fbtypes_deviceScalingType" : {
+"type" : "string",
+"enum": ["UNDEFINED", "ROTARY", "PERCENTAGE", "LINEAR"]
+},
+"comm_axisprofile_fbtypes_variableType" : {
+"type" : "string",
+"enum": ["BASE", "VELOCITY", "HOMING", "PROBE"]
+},
+"comm_axisprofile_fbtypes_mappingEntry" : {
+"type" : "object",
+"properties" : {
+"valueID" : {
+"type" : "string"
+},
+"datalayerURI" : {
+"type" : "string"
+},
+"profileVar" : {
+"$ref" : "#/definitions/comm_axisprofile_fbtypes_variableType"
+}
+},
+"required" : ["valueID"],
+"additionalProperties" : false
+},
+"comm_axisprofile_fbtypes_profile" : {
+"type" : "object",
+"properties" : {
+"name" : {
+"type" : "string"
+},
+"type" : {
+"$ref" : "#/definitions/comm_axisprofile_fbtypes_ProfileType"
+}
+},
+"additionalProperties" : false
+},
+"comm_axisprofile_fbtypes_profileConfig" : {
+"type" : "object",
+"properties" : {
+"deviceAddress" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"inputBuffer" : {
+"type" : "string"
+},
+"outputBuffer" : {
+"type" : "string"
+},
+"profileBasicData" : {
+"$ref" : "#/definitions/comm_axisprofile_fbtypes_profile"
+},
+"inputMapping" : {
+"$ref" : "#/definitions/comm_axisprofile_fbtypes_valueMapping"
+},
+"outputMapping" : {
+"$ref" : "#/definitions/comm_axisprofile_fbtypes_valueMapping"
+},
+"scalingInfo" : {
+"$ref" : "#/definitions/comm_axisprofile_fbtypes_profileScalingCfg"
+},
+"deviceName" : {
+"type" : "string"
+}
+},
+"additionalProperties" : false
+},
+"comm_axisprofile_fbtypes_profileDeviceScalingType" : {
+"type" : "object",
+"properties" : {
+"scalingType" : {
+"$ref" : "#/definitions/comm_axisprofile_fbtypes_deviceScalingType"
+}
+},
+"additionalProperties" : false
+},
+"comm_axisprofile_fbtypes_profileScalingCfg" : {
+"type" : "object",
+"properties" : {
+"scalingStrategy" : {
+"$ref" : "#/definitions/comm_axisprofile_fbtypes_profileScalingStrategy"
+},
+"scalingType" : {
+"$ref" : "#/definitions/comm_axisprofile_fbtypes_profileDeviceScalingType"
+},
+"numerator" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"denominator" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+},
+"resolution" : {
+"type" : "integer", "minimum" : 0, "maximum" : 4294967295
+}
+},
+"additionalProperties" : false
+},
+"comm_axisprofile_fbtypes_profileScalingStrategy" : {
+"type" : "object",
+"properties" : {
+"strategy" : {
+"$ref" : "#/definitions/comm_axisprofile_fbtypes_ScalingStrategy"
+}
+},
+"additionalProperties" : false
+},
+"comm_axisprofile_fbtypes_valueMapping" : {
+"type" : "object",
+"properties" : {
+"mapping" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/comm_axisprofile_fbtypes_mappingEntry"}
+}
+},
+"additionalProperties" : false
+}
+},
+"$ref" : "#/definitions/comm_axisprofile_fbtypes_profileConfig"
+}

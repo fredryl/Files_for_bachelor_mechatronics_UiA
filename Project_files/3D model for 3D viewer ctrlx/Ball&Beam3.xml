@@ -1,0 +1,40 @@
+<machine_definition>
+  <machine_data name="Ball&amp;Beam" units="metric" />
+  <transform name="TrafoBase" initialvalue="1,0,0,0,0,-4.371139E-08,-1,0,0,1,-4.371139E-08,0,0,0,0,1">
+    <geometry name="Aluminium" objtype="geometry" alpha="0" clrr="0.980392158" clrg="0.980392158" clrb="1" geo="FRAME.stl,DRIVE_MOUNTING_PART.stl" />
+    <geometry name="Black" objtype="geometry" alpha="0" clrr="0.2" clrg="0.2" clrb="0.20" geo="MOTOR.stl" />
+    <geometry name="Darkgrey" objtype="geometry" alpha="0" clrr="0.05" clrg="0.05" clrb="0.05" geo="DRIVE_PARTS.stl" />
+    <geometry name="Darkgrey" objtype="geometry" alpha="0" clrr="0.509803951" clrg="0.509803951" clrb="0.5882353" geo="CONNECTOR_CAPS.stl" />
+    <geometry name="Grey" objtype="geometry" alpha="0" clrr="0.784313738" clrg="0.784313738" clrb="0.8627451" geo="CONNECTORS.stl" />
+	<geometry name="Grey" objtype="geometry" alpha="0" clrr="0.9" clrg="0.9" clrb="0.90" geo="BOX.stl" />
+    <geometry name="Lightgrey" objtype="geometry" alpha="0" clrr="0.94" clrg="0.94" clrb="0.94" geo="DRIVE_MAIN.stl" />
+    <transform name="Logo" initialvalue="1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1">
+      <geometry name="Red" objtype="geometry" alpha="0" clrr="0.8784314" clrg="0" clrb="0.141176477" geo="LOGO_RED.stl" />
+      <geometry name="Darkblue" objtype="geometry" alpha="0" clrr="0" clrg="0.172549024" clrb="0.286274523" geo="LOGO_DARKBLUE.stl" />
+      <geometry name="Turquoise" objtype="geometry" alpha="0" clrr="0" clrg="0.8" clrb="1" geo="LOGO_TURQUOISE.stl" />
+      <geometry name="Lightgrey" objtype="geometry" alpha="0" clrr="0.6392157" clrg="0.7294118" clrb="0.784313738" geo="LOGO_LIGHTGREY.stl" />
+      <geometry name="Darkgrey" objtype="geometry" alpha="0" clrr="0.349019617" clrg="0.4862745" clrb="0.5647059" geo="LOGO_DARKGREY.stl" />
+    </transform>
+  </transform>
+  <transform name="TrafoKin" initialvalue="1,0,0,0,0,-4.371139E-08,-1,0,0,1,-4.371139E-08,0,0,0,0,1">
+    <axis name="Y" type="rotation" x="0" y="0" z="-1" channelId="0" minvalue="-30" maxvalue="30" initial_value="0" rotationAxisRolloverEnabled="False" rzx="0" rzy="0" rzz="0">
+      <axis name="X" type="translation" x="1" y="0" z="0" channelId="0" minvalue="-335" maxvalue="335" initial_value="-330">
+        <geometry name="Red" objtype="geometry" alpha="0" clrr="1" clrg="0.5490196" clrb="0" geo="BALL.stl" />
+      </axis>
+
+      <geometry name="Aluminium" objtype="geometry" alpha="0" clrr="0.18039" clrg="0.18039" clrb="0.18039" geo="RODS.stl" />
+      	
+      <geometry name="Aluminium" objtype="geometry" alpha="0" clrr="0.878431" clrg="0.8745098" clrb="0.85882353" geo="PLUG.stl" />
+      
+	<geometry name="Darkgrey" objtype="geometry" alpha="0" clrr="0.05" clrg="0.05" clrb="0.05" geo="JACK.stl" />
+      
+	<geometry name="Lightgrey" objtype="geometry" alpha="0" clrr="0.2" clrg="0.2" clrb="0.2" geo="SHAFT.stl,ENDINGS.stl,CABLE_CLIPS.stl,HUB.stl" />
+
+	<geometry name="Lightgrey" objtype="geometry" alpha="0" clrr="0.25" clrg="0.25" clrb="0.25" geo="SCREWS.stl" />
+
+	<geometry name="Lightgrey" objtype="geometry" alpha="0" clrr="0.25" clrg="0.25" clrb="0.25" geo="PLATE.stl" />
+     
+	<geometry name="Yellow" objtype="geometry" alpha="0" clrr="1" clrg="1" clrb="0" geo="CABLE.stl" />
+    </axis>
+  </transform>
+</machine_definition>

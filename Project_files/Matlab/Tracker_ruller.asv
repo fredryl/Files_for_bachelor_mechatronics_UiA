@@ -1,0 +1,200 @@
+clear; clc; close all;
+%% Parameters from Beam and Ball
+s = 468.8; % [mm] lengt of surface
+Theta = 5; % angle of the rolling surface
+data_tracker = readtable('Tracker.xlsx'); % data from Tracker (film)
+ping_pong_tracker = table2array(data_tracker);
+g = 9810; %[mm/s^2] 
+time_ping_pong =ping_pong_tracker(:,1)-0.6529333333; % s, 
+% Correction of time to start at zero
+liste_Ping_pong_tracker_x = (ping_pong_tracker(:,2)-0.009219700051)*10^3; % mm, Correction of position to start at zero
+
+%% Ball and Beam analytically calculates position, velocity and acceleration.
+a_hul = (3/5)*g*sind(Theta)*ones(size(time_ping_pong)); % rollers on surface higest acceleration (rolls on the tip).
+
+% takes into account 2 rails
+R_ball = 40.1*1/2; % mm
+d_beam_17 = 16.667; % mm
+
+a_hul_2_rail =(g*sind(Theta))/(1+(2*R_ball^2)/(3*(R_ball^2-d_beam_17^2/4)) ...
+    )*ones(size(time_ping_pong)); % mm/s^2Acceleration analytically on rods
+
+v_hul =  (3/5)*g*sind(Theta)*time_ping_pong;% mm/s, Velocity analytically on a surface
+v_hul_2_rail =a_hul_2_rail.*time_ping_pong; % mm/s Velocity analytically on rods
+
+s_hul =  (3/5)*g*sind(Theta)*(1/2)*time_ping_pong.^2;% mm, Position analytically on a surface
+s_hul_2_rail = a_hul_2_rail(1)*(1/2)*time_ping_pong.^2;% mm analytically on rods
+
+%% Max rotation speed if the ball is not to move on the beam
+acceleration_5_deg = 473.451 % mm/s^2, classic mek based on newtons laws
+omega_stabel = sqrt(acceleration_5_deg/335.1); % Rad/s, rotation of beam if beam at 5 deg and ball at 
+% the farest from center. If the rotation is higher, the ball will roll up
+% the beam instead of down at 5 deg.
+v_at_tip = omega_stabel*0.3351; % m/s, tagential velocity.
+
+%% Finds the numerical derivative from lists we have defined
+% ourselves. Here we have
+
+%Derivates the position to find the velocity
+dtA = diff(time_ping_pong);%Calculates x2-x1 etc... That is, 
+% takes the next minus the previous and finds the difference between them
+dy_A = diff(liste_Ping_pong_tracker_x);% Calculate y2-y1 aso...
+yDer_A = dy_A./dtA;% find the numerical derivative by taking the 
+% difference in y divided by the difference in x
+
+% Derivates the velocity to acceleration
+dt2A = diff(time_ping_pong);%Calculates x2-x1 etc... That is, 
+% takes the next minus the previous and finds the difference between them
+dy2_A = diff(yDer_A);% Calc y2-y1 aso...
+dy2_A(end+1) = dy2_A(end);
+yDer_2A = dy2_A./dt2A;% find the numerical derivative by taking the 
+% difference in y divided by the difference in x
+
+yDer_2A_mean= yDer_2A(1:82,1);
+mean_a_A = mean(yDer_2A_mean)*ones(size(time_ping_pong)); % Finds the average of the acceleration from the tracker
+
+
+
+%% Data from Simscape, 5 deg
+% DATA FOM SIMSCAPE PLOT:
+% data_pos_simscape = (Data_5Deg.signals(2).values(1:end,7)) ;
+% data_vel_simscape = (Data_5Deg.signals(2).values(1:end,5)) ;
+% data_acc_simscape = (Data_5Deg.signals(2).values(1:end,10)) ;
+% data_time_simscape = (Data_5Deg.time)   ;
+
+%% Save data form simscape to Excel file:
+% Tabel_5deg_simacape = table(data_time_simscape, data_pos_simscape, ...
+%     data_vel_simscape,data_acc_simscape, 'VariableNames', {'Time', 'Position', 'Velocity', 'Acceleration'});
+% filename = 'Ball_roll_5deg_simscape.xlsx';
+% writetable(Tabel_5deg_simacape, filename);
+data_5deg_simscape = readtable('Ball_roll_5deg_simscape.xlsx');
+data_5deg_simscape = table2array(data_5deg_simscape);
+
+time_simscape = data_5deg_simscape(:,1);
+pos_simscape = data_5deg_simscape(:,2)-2;
+vel_simscape = data_5deg_simscape(:,3);
+acc_simscape = data_5deg_simscape(:,4);
+
+
+%% Loads data from measurements in the CtrlX program (real measurements)
+% Specify the file name and location
+filename = 'BallPos_5deg_beam_angle_roll_calib.trace.csv';
+% Read the data from the CSV file
+data_CtrlX = readmatrix(filename);
+% Convert time values from milliseconds to seconds
+data_CtrlX(:,3) = data_CtrlX(:,3) / 1000;
+% Corectin axis to start at 0.
+time_CtrlX = data_CtrlX(2007:2831,3)-3.985; %Time from start to end  of ball rolling
+pos_CtrlX = data_CtrlX(2007:2831,10); %Time from start to end  of ball rolling
+
+% Calculating the velocity and the acceleration for the CtrlX values
+%Finds the numerical derivative from lists
+
+%Derivates the position to find the velocity
+dt_CtrlX = diff(time_CtrlX);%Calculates x2-x1 etc... That is, 
+% takes the next minus the previous and finds the difference between them
+dy_CtrlX = diff(pos_CtrlX);% Calculate y2-y1 aso...
+yDer_CtrlX = dy_CtrlX./dt_CtrlX;% find the numerical derivative by taking the 
+% difference in y divided by the difference in x
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Use a low pass filter on signal position
+% Define the filter parameters
+fc = 6.1; % cutoff frequency in Hz
+fs = 500; % sampling frequency in Hz
+order = 2; % filter order
+% Calculate the filter coefficients
+[b, a] = butter(order, fc/(fs/2), 'low');
+% Apply the filter to signal
+x = yDer_CtrlX; % signal
+y_CtrlX = filter(b, a, x);
+% Plot the frequency response of the filter
+% figure
+% freqz(b, a, 1024, fs);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Derivates the velocity to acceleration (from velocity filtered)
+dt2_CtrlX = diff(time_CtrlX);%Calculates x2-x1 etc... That is, 
+% takes the next minus the previous and finds the difference between them
+dy2_CtrlX = diff(y_CtrlX);% Calc y2-y1 aso...
+dy2_CtrlX(end+1) = dy2_CtrlX(end);
+yDer2_CtrlX = dy2_CtrlX./dt2_CtrlX;% find the numerical derivative by taking the 
+% difference in y divided by the difference in x
+
+mean_a_CtrlX222 = mean(yDer2_CtrlX(30:700))*ones(size(time_CtrlX)); %
+
+%% Put in ctrlx time and pos values to plot for all simulated values
+%Plot possission and time
+figure
+plot(time_ping_pong,s_hul, 'Color',[1 0.6 0])
+hold on
+plot(time_ping_pong,liste_Ping_pong_tracker_x, 'Color',[0.4 0.1 0.8])
+hold on
+plot(time_ping_pong,s_hul_2_rail, 'Color',[0 1 0])
+grid on
+plot(time_simscape',pos_simscape', '--', 'Color',[0 0 0])
+hold on
+plot(time_CtrlX, pos_CtrlX, '-.', 'Color',[1 0.2 0.6]);
+xlabel('Time [s]')
+ylabel('Position [mm]')
+title('Position ball 5\circ')
+legend('Analytic ball rolls on a surface','Real on rods Tracker', ...
+    'Analytic ball on rail','Simscape model','Real CtrlX','location','northwest')
+
+%Plot velocity and time
+figure
+grid on
+plot(time_ping_pong,v_hul, 'Color',[1 0.6 0]);
+hold on
+plot(time_ping_pong(1:end-1),yDer_A, 'Color',[0.4 0.1 0.8])% Plot the numerical derivative
+hold on
+plot(time_ping_pong,v_hul_2_rail, 'Color',[0 1 0])
+grid on
+plot(time_simscape',vel_simscape', '--', 'Color',[0 0 0])
+hold on
+plot(time_CtrlX(1:end-1),y_CtrlX, '-.', 'Color',[1 0.2 0.6])% Plot the numerical derivative
+xlabel('Time [s]')
+ylabel('Velocity [mm/s]')
+title('Velocity ball 5\circ')
+legend('Analytic ball rolls on a surface','Real on rods Tracker', ...
+    'Analytic ball on rail','Simscape model','Real CtrlX','location','northwest')
+
+%Plot acceleration and time
+figure
+plot(time_ping_pong,a_hul, 'Color',[1 0.6 0])
+hold on
+plot(time_ping_pong,mean_a_A, 'Color',[0.4 0.1 0.8])
+hold on
+plot(time_ping_pong,a_hul_2_rail, 'Color',[0 1 0])
+hold on
+grid on
+plot(time_simscape',acc_simscape', '--' , 'Color',[0 0 0])
+hold on
+plot(time_CtrlX,mean_a_CtrlX222, '-.', 'Color',[1 0.2 0.6])
+xlabel('Time [s]')
+ylabel('Acceleration [mm/s^2]')
+title('Acceleration ball 5\circ')
+legend('Analytic ball rolls on a surface','Mean real on rods Tracker', ...
+    'Analytic ball on rods','Simscape model','Real CtrlX','location','best')
+
+
+%% Testing
+deg = linspace(0,20,801);
+a_llll =(g*sind(deg))/(1+(2*R_ball^2)/(3*(R_ball^2-d_beam_17^2/4)));
+figure
+
+plot(a_llll,deg)
+grid on
+
+
+ommmm = sqrt(a_llll/r)*
+
+
+% 
+% om = sqrt(a_llll./100);
+% 
+% figure
+% plot(deg,om)
+

@@ -1,0 +1,28 @@
+{
+"$schema": "https://json-schema.org/draft/2019-09/schema",
+"definitions": {
+"comm_datalayer_remote_ConfigItem" : {
+"type" : "object",
+"properties" : {
+"name" : {
+"type" : "string"
+},
+"address" : {
+"type" : "string"
+}
+},
+"required" : ["name", "address"],
+"additionalProperties" : false
+},
+"comm_datalayer_remote_RemoteConfig" : {
+"type" : "object",
+"properties" : {
+"remotes" : {
+"type" : "array", "items" : {"$ref" : "#/definitions/comm_datalayer_remote_ConfigItem"}
+}
+},
+"additionalProperties" : false
+}
+},
+"$ref" : "#/definitions/comm_datalayer_remote_RemoteConfig"
+}

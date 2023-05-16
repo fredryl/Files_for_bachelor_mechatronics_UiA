@@ -1,0 +1,142 @@
+{
+    "$persistence_header": {
+        "bfbs": "./bfbs/enablingstates.bfbs",
+        "version": "0.0.2"
+    },
+    "$schema": "./types/enablingstates_schema.json",
+    "enablingStates": [
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "motion.sync",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "motion.core",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "comm.axisprofile",
+            "warnings": false
+        },
+        {
+            "errors": true,
+            "messages": false,
+            "unitName": "plc.cmp.datalayer.rt",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "plc.cmp.datalayer.nrt",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "plc.cmp.motion",
+            "warnings": false
+        },
+        {
+            "errors": true,
+            "messages": false,
+            "unitName": "common.log.trace",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "motion.collision_avoidance",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "comm.datalayer.core",
+            "warnings": false
+        },
+        {
+            "errors": true,
+            "messages": false,
+            "unitName": "common.log.diagnosis",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "motion.drivecommands",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "script.manager",
+            "warnings": false
+        },
+        {
+            "errors": true,
+            "messages": false,
+            "unitName": "comm.datalayer.framework",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "web.automation",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "motion.script",
+            "warnings": false
+        },
+        {
+            "errors": true,
+            "messages": true,
+            "unitName": "app.automationframework",
+            "warnings": true
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "common.scheduler.nrt",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "comm.ethercat.master",
+            "warnings": false
+        },
+        {
+            "errors": true,
+            "messages": false,
+            "unitName": "common.scheduler.rt",
+            "warnings": false
+        },
+        {
+            "errors": true,
+            "messages": false,
+            "unitName": "common.systemhandler.rt",
+            "warnings": false
+        },
+        {
+            "errors": false,
+            "messages": false,
+            "unitName": "plc.system.nrt",
+            "warnings": false
+        },
+        {
+            "errors": true,
+            "messages": false,
+            "unitName": "plc.system.rt",
+            "warnings": false
+        }
+    ],
+    "machineIdentification": "7260416704826"
+}
