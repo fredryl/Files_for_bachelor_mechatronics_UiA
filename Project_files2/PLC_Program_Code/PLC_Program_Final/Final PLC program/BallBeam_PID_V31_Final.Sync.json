@@ -1,0 +1,48 @@
+{
+  "IsSynced": true,
+  "SyncMode": 3,
+  "InSyncWithRuntime": true,
+  "ApplicationType": "plc",
+  "Configuration": "appdata",
+  "Solution": "DefaultSolution",
+  "ControllerGuid": "210a0761-0b29-48d0-9965-205a30d8a56a",
+  "LastChange": 638198190510663961,
+  "MachineName": "AAA",
+  "UserName": "andre",
+  "ProjectCompleteFilename": "C:\\Users\\andre\\Universitetet i Agder\\Bachelor V23 - General\\Ball and beam bachelor\\Git_hub\\AAA\\ctrlX\\BallBeam_PID_V31_Final.project",
+  "CompilerVersion": {
+    "Major": 3,
+    "Minor": 5,
+    "Build": 18,
+    "Revision": 40,
+    "MajorRevision": 0,
+    "MinorRevision": 40
+  },
+  "OwnVersion": {
+    "Major": 1,
+    "Minor": 2,
+    "Build": 0,
+    "Revision": 0,
+    "MajorRevision": 0,
+    "MinorRevision": 0
+  },
+  "ProductAdditionalFolder": "Default",
+  "ProductProfileName": "ctrlX PLC 1.18.1",
+  "ProductId": "ctrlx-works",
+  "ProductVersion": "1.18.2",
+  "ProductVersionText": "WRK-V-0118.2",
+  "SyncModeSave": true,
+  "SyncModeDownload": true,
+  "SyncModeAsk": false,
+  "UserMetaData": {
+    "AAA:andre": {
+      "MachineName": "AAA",
+      "UserName": "andre",
+      "ProjectCompleteFilename": "C:\\Users\\andre\\Universitetet i Agder\\Bachelor V23 - General\\Ball and beam bachelor\\Git_hub\\AAA\\ctrlX\\BallBeam_PID_V31_Final.project"
+    }
+  },
+  "SyncDescription": false,
+  "DeviceId": "1001 0080",
+  "DeviceVersion": "1.18.20.0",
+  "UseIoHierachy": true
+}
