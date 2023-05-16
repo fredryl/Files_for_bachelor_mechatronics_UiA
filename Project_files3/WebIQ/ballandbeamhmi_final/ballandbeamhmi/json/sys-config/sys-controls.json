@@ -1,0 +1,92 @@
+{
+    "notificationDialog": {
+        "name": "notification-dialog",
+        "title": "${V_NOTIFICATION}",
+        "template": "default/sys-dialog/dialog-notification"
+    },
+    "confirmDialog": {
+        "class-name": "dialog-box confirm",
+        "title": "${V_CONFIRM_TITLE}",
+        "name": "visuals-confirm-dialog",
+        "template": "default/sys-dialog/dialog-confirm",
+        "cover-background": true
+    },
+    "optionDialog": {
+        "class-name": "dialog-box option",
+        "title": "${V_OPTIONDIALOG_TITLE}",
+        "name": "visuals-option-dialog",
+        "template": "default/sys-dialog/dialog-option",
+        "cover-background": true
+    },
+    "askSaveDialog": {
+        "class-name": "dialog-box ask-save",
+        "title": "${V_ASK_SAVE_TITLE}",
+        "name": "ask-save-dialog",
+        "template": "default/sys-dialog/dialog-ask-save",
+        "cover-background": true
+    },
+    "chooseFileDialog": {
+        "template": "default/sys-dialog/dialog-file"
+    },
+    "passwordExpiredDialog": {
+        "class-name": "dialog-box password-expired",
+        "name": "password-expired-dialog",
+        "template": "default/sys-dialog/dialog-password-expired",
+        "title": "${V_PASSWORD_EXPIRED_TITLE}",
+        "cover-background": true
+    },
+    "startupLogin": {
+        "ui": "login",
+        "class-name": "login",
+        "template": "default/login",
+        "userEntry": "<div data-ui=\"user\" class=\"user\"><div class=\"userPic\"></div><div class=\"user_detail\"><h1 data-ui=\"user-name\"><%= USER %></h1></div></div>"
+    },
+    "loadingOverlay": {
+        "tagName": "DIV",
+        "class-name": "loading-box-overlay",
+        "template": null
+    },
+    "threadsDialogCreate": {
+        "dialogTitle": "${threads.create.dialog.title}",
+        "dialogClassName": "dialog-box threads-dialog",
+        "dialogTemplate": "default/dialog-box",
+        "titleClassName": "iq-input-field iq-variant-02 title",
+        "titleTemplate": "default/iq-input-field.iq-variant-02",
+        "titleLabel": "${threads.create.title.label}",
+        "messageClassName": "iq-input-field iq-variant-02 message",
+        "messageTemplate": "default/iq-input-field.iq-variant-02",
+        "messageLabel": "${threads.create.message.label}",
+        "deleteClassName": "iq-button iq-variant-01 delete",
+        "deleteTemplate": "default/iq-button.iq-variant-01",
+        "deleteLabel": "",
+        "applyClassName": "iq-button iq-variant-01 apply",
+        "applyTemplate": "default/iq-button.iq-variant-01",
+        "applyLabel": "${threads.create.apply.label}",
+        "enterMessageNotification": "${threads.enterMessage.notification}"
+    },
+    "threadsDialogEdit": {
+        "dialogTitle": "${threads.edit.dialog.title}",
+        "dialogClassName": "dialog-box threads-dialog",
+        "dialogTemplate": "default/dialog-box",
+        "titleClassName": "iq-input-field iq-variant-02 title",
+        "titleTemplate": "default/iq-input-field.iq-variant-02",
+        "titleLabel": "${threads.edit.title.label}",
+        "messageClassName": "iq-input-field iq-variant-02 message",
+        "messageTemplate": "default/iq-input-field.iq-variant-02",
+        "messageLabel": "${threads.edit.message.label}",
+        "deleteClassName": "iq-button iq-variant-01 delete",
+        "deleteTemplate": "default/iq-button.iq-variant-01",
+        "deleteLabel": "${threads.edit.delete.label}",
+        "deleteConfirmation": "${threads.edit.delete.confirmation}",
+        "applyClassName": "iq-button iq-variant-01 apply",
+        "applyTemplate": "default/iq-button.iq-variant-01",
+        "applyLabel": "${threads.edit.apply.label}",
+        "enterMessageNotification": "${threads.enterMessage.notification}"
+    },
+    "threadList": {
+        "templateUrl": "default/thread-list",
+        "dateformat": "${V_DATEFORMAT}",
+        "renderReplies": false,
+        "styleSpeechBubble": false
+    }
+}

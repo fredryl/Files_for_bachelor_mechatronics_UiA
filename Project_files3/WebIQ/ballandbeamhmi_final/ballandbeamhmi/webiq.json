@@ -1,0 +1,36 @@
+{
+    "name": "ballandbeamhmi",
+    "description": "",
+    "title": "BallAndBeamHMI",
+    "type": "app",
+    "version": "1.0",
+    "published": true,
+    "requires": {
+        "visuals": "^2.13.0+33938"
+    },
+    "grid": {
+        "x": 8,
+        "y": 8,
+        "visible": true,
+        "snap": false
+    },
+    "lastLayout": 5,
+    "numTags": 73,
+    "numIoHandlers": 1,
+    "lastEdit": 1684147526,
+    "lastEditor": "admin",
+    "lastEditorData": {
+        "user": "andre",
+        "hostname": "AAA",
+        "platform": {
+            "architecture": "x64",
+            "platform": "win32",
+            "type": "Windows_NT"
+        },
+        "webiq": {
+            "connect": "2.13.0 (release/2.13.0/359e2c8f)",
+            "designer": "2.13.0 v2.13.0 622196e24012a028988ef0b04111b10d95d1f2d4",
+            "visuals": "2.13.0 Build 33938"
+        }
+    }
+}
